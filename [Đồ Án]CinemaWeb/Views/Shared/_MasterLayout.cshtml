@@ -286,6 +286,67 @@
     .selection-option:hover .tooltip {
         display: block; /* Hiện tooltip khi di chuột vào mục */
     }
+    /* Carousel Container */
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Carousel Inner (where the items are) */
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    /* Carousel Item */
+    .carousel-item {
+        min-width: 100%; /* One item shown at a time */
+        text-align: center;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .carousel-item img {
+            width: 200px;
+            height: auto;
+        }
+
+        .carousel-item p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+    /* Navigation Arrows */
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1;
+    }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        .carousel-control:focus {
+            outline: none;
+        }
+
 </style>
 <!DOCTYPE html>
 <html lang="vi">
@@ -389,6 +450,56 @@
             </div>
         </div>
     </div>
+    <!-- Phim Đang Chiếu Section (with slide effect) -->
+    <div class="movie-sections">
+        <h2 class="section-title">Phim: Đang Chiếu</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/200x300?text=Robot+Ho%C3%A0ng+%C4%90%C3%A1" alt="Robot Hoàng Đá" />
+                    <p class="movie-title">Robot Hoàng Đá</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/200x300?text=Fubao+B%E1%BA%A3o+B%E1%BB%91i+C%E1%BB%A7a+%C3%94ng" alt="Fubao Bảo Bối Của Ông" />
+                    <p class="movie-title">Fubao Bảo Bối Của Ông</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/200x300?text=Chi%C3%AAu+H%E1%BB%93i+Vong+H%E1%BB%93n" alt="Chiêu Hồi Vong Hồn" />
+                    <p class="movie-title">Chiêu Hồi Vong Hồn</p>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-control prev">‹</button>
+            <button class="carousel-control next">›</button>
+        </div>
+    </div>
+
+    <!-- Phim Sắp Chiếu Section (also with slide effect) -->
+    <div class="movie-sections">
+        <h2 class="section-title">Phim: Sắp Chiếu</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/200x300?text=Venom" alt="Venom" />
+                    <p class="movie-title">Venom</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/200x300?text=Ng%C3%A0y+X%C6%B0a+C%C3%B3+M%E1%BB%99t+Chuy%E1%BB%87n+T%C3%ACnh" alt="Ngày Xưa Có Một Chuyện Tình" />
+                    <p class="movie-title">Ngày Xưa Có Một Chuyện Tình</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/200x300?text=%C4%90%E1%BB%8Bnh+M%E1%BB%87nh" alt="Định Mệnh" />
+                    <p class="movie-title">Định Mệnh</p>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-control prev">‹</button>
+            <button class="carousel-control next">›</button>
+        </div>
+    </div>
+
     <script src="~/Scripts/main.js"></script>
     <script src="~/Scripts/Booking.js"></script>
     <div>

@@ -192,6 +192,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Resgiter.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
+    <Content Include="Views\Home\KhuyenMai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

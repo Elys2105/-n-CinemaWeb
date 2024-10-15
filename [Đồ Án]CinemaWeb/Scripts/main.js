@@ -59,5 +59,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cập nhật kích thước khi resize
     window.addEventListener('resize', updateSliderPosition);
 });
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const inner = carousel.querySelector('.carousel-inner');
+    const items = inner.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
 
+    // Next Button
+    carousel.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    });
 
+    // Prev Button
+    carousel.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+    });
+
+    function updateCarousel() {
+        inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+});
