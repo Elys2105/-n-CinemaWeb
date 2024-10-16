@@ -146,10 +146,22 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\pictures\123.jpg" />
+    <Content Include="Content\pictures\45k.jpg" />
+    <Content Include="Content\pictures\50.jpg" />
+    <Content Include="Content\pictures\Bảng Giá Kid.jpg" />
+    <Content Include="Content\pictures\Bảng giá vé.jpg" />
+    <Content Include="Content\pictures\Bắp.jpg" />
+    <Content Include="Content\pictures\Chính Sách Thành Viê.jpg" />
     <Content Include="Content\pictures\co-dau-hao-mon.jpg" />
+    <Content Include="Content\pictures\Combo Siêu Tiết Kiệm.jpg" />
+    <Content Include="Content\pictures\Giá vé Gold Clas.jpg" />
     <Content Include="Content\pictures\joker-lady.jpg" />
     <Content Include="Content\pictures\logo.png" />
+    <Content Include="Content\pictures\Pleiku GIa Lai.jpg" />
     <Content Include="Content\pictures\quy-ăn-tang.jpg" />
+    <Content Include="Content\pictures\Thứ 5 thành viên.jpg" />
+    <Content Include="Content\pictures\u22.jpg" />
+    <Content Include="Content\pictures\Địa chỉ.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -192,7 +204,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Resgiter.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
-    <Content Include="Views\Home\KhuyenMai.cshtml" />
+    <Content Include="Views\User\KhuyenMai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
