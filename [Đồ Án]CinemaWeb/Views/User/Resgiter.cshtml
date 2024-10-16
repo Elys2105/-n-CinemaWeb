@@ -1,5 +1,533 @@
 ﻿@{
-    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    Layout = null;
 }
-Resgiter
+﻿
+<style type="text/css">
 
+    /*    url('https://downloadlogomienphi.com/sites/default/files/logos/download-logo-starlight-entertainment-center-mien-phi.jpg')
+    */ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+    /*      Trang đăng nhập */
+    .header {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        z-index: 99;
+        background: transparent;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center; /* Căn giữa theo chiều dọc */
+    }
+
+        .nav ul {
+            display: flex; /* Sắp xếp các mục theo chiều ngang */
+            list-style: none; /* Loại bỏ dấu đầu dòng */
+            padding: 0; /* Bỏ padding mặc định */
+            margin: 0; /* Bỏ margin mặc định */
+        }
+
+        .nav li {
+            margin-left: 20px; /* Khoảng cách giữa các mục */
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: hotpink;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+    .header .nav a {
+        text-decoration: none;
+        color: hotpink;
+        font-size: 17px;
+        margin-left: 20px;
+        font-weight: 600;
+    }
+
+    .header .search input {
+        background: no-repeat;
+        font-size: 20px;
+        border-radius: 5px;
+        border: 2px solid white;
+        padding-left: 10px;
+        padding-right: 100px;
+        outline: none;
+        color: hotpink;
+    }
+
+    .header .search {
+        position: absolute;
+        right: 110px;
+        top: 40px;
+        color: hotpink;
+    }
+
+    .background {
+        width: 100%;
+        height: 100vh;
+        background-image: url('https://file.hstatic.net/1000246347/file/shutterstock_208511908_1024x1024.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .home {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 75%;
+        height: 75%;
+        transform: translate(-50%, -50%);
+        background-image: url('https://file.hstatic.net/1000246347/file/shutterstock_208511908_1024x1024.jpg');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        margin-top: 10px;
+        border: 1px solid hotpink;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Đặt chiều rộng là 100% */
+        max-width: 700px; /* Đặt chiều rộng tối đa */
+        margin: 0 auto; /* Căn giữa nội dung */
+        padding: 100px 0;
+        position: relative; /* Đảm bảo có thể sử dụng z-index */
+        z-index: 1; /* Đặt z-index cao hơn */
+    }
+
+        .content a {
+            position: relative;
+            text-decoration: none;
+            color: hotpink;
+            font-size: 3em;
+            font-weight: 700;
+            top: -40px;
+            left: 80px;
+        }
+
+        .content h2 {
+            font-size: 3.5em;
+            text-align: center;
+            color: hotpink;
+        }
+
+        .content h3 {
+            font-size: 2em;
+            text-align: center;
+            color: hotpink;
+        }
+
+        .content pre {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1em;
+            color: hotpink;
+        }
+
+        .content .icon {
+            margin-top: 20px;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+        }
+
+            .content .icon i {
+                margin-left: 20px;
+                color: #fff;
+            }
+
+    .login {
+        width: 100%; /* Đặt chiều rộng là 100% */
+        max-width: 100%; /* Đặt chiều rộng tối đa */
+        position: relative;
+        padding: 100px 30px;
+        backdrop-filter: blur(20px);
+    }
+
+        .login h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: hotpink;
+        }
+
+        .login .input {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 30px;
+            margin-bottom: 40px;
+        }
+
+            .login .input i {
+                margin-left: -20px;
+                margin-top: 60px;
+                position: relative;
+                right: auto;
+                bottom: 27px;
+                color: hotpink;
+                cursor: pointer;
+            }
+
+            .login .input .input1 {
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: transparent;
+                border: none;
+                outline: none;
+                border-bottom: 2px solid #fff;
+                color: hotpink;
+                width: 100%;
+                height: 100%;
+            }
+
+    .placeholder {
+        color: hotpink;
+        font-size: 18px;
+    }
+
+    .check {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        color: hotpink;
+    }
+
+        .check a {
+            text-decoration: none;
+            color: hotpink;
+        }
+
+            .check a.hover {
+                text-decoration: underline;
+            }
+
+    .login .button {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 100%;
+        height: 40px;
+        background-color: hotpink;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 7px;
+        color: #fff;
+    }
+
+    .icon {
+        display: flex; /* Sử dụng Flexbox */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        margin-top: 20px; /* Khoảng cách trên */
+    }
+
+        .icon i {
+            font-size: 2em; /* Kích thước biểu tượng */
+            color: black !important; /* Màu sắc biểu tượng */
+            margin: 0 15px; /* Khoảng cách giữa các biểu tượng */
+            transition: transform 0.3s; /* Hiệu ứng chuyển tiếp khi hover */
+        }
+
+            .icon i:hover {
+                transform: scale(1.5); /* Phóng to biểu tượng khi hover */
+            }
+
+    .input i.fa-times,
+    .input i.fa-check {
+        font-size: 1.2em; /* Điều chỉnh kích thước của X và Tích */
+    }
+
+    button:active {
+        font-size: 25px;
+    }
+
+    .login .sign-up {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+        text-align: center;
+    }
+
+    .signup-text {
+        color: white; /* Đặt màu chữ thành trắng */
+    }
+
+    .login .sign-up a {
+        text-decoration: underline;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .login .sign-up p {
+        color: #fff;
+    }
+
+    .sign-up a hover {
+        text-decoration: underline;
+    }
+
+    .input1:focus {
+        border-color: hotpink; /* Thay đổi màu viền khi tiêu điểm */
+        outline: none; /* Bỏ viền mặc định */
+    }
+    /* Các quy tắc CSS khác */
+
+    .header {
+        padding: 20px 10px; /* Điều chỉnh padding */
+    }
+
+    .content h2 {
+        font-size: 2.5em; /* Giảm kích thước chữ */
+    }
+
+    .content h3 {
+        font-size: 1.8em; /* Giảm kích thước chữ */
+    }
+
+    .login {
+        width: 90%; /* Mở rộng chiều rộng trên thiết bị di động */
+        margin: 0 auto; /* Căn giữa */
+    }
+    /* Animation chuyển trang */
+    .fade-out {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+        .fade-out.hidden {
+            opacity: 0;
+        }
+
+    #signUpMessage {
+        display: none;
+    }
+
+    #success-message {
+        display: flex; /* Sử dụng Flexbox */
+        flex-direction: column; /* Sắp xếp theo chiều dọc */
+        align-items: center; /* Căn giữa theo chiều ngang */
+        justify-content: center; /* Căn giữa theo chiều dọc */
+        text-align: center; /* Căn giữa văn bản */
+        margin-top: 20px; /* Thêm khoảng cách trên nếu cần */
+    }
+
+    #backToLogin {
+        margin-top: 10px; /* Khoảng cách giữa thông báo và nút */
+        display: block; /* Đảm bảo nút là một khối */
+        margin-left: auto; /* Tự động căn trái */
+        margin-right: auto; /* Tự động căn phải */
+    }
+</style>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="~/Home/Contact">Liên hệ</a></li>
+                <li><a href="~/Home/About">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <a> <i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    </header>
+    <div class="background"></div>
+    <section class="home">
+        <div class="content">
+            <a href="#" class="logo"> StarLight </a>
+            <h2> Welcom!</h2>
+            <h3> To Our Nem Website </h3>
+            <pre> Chào Các Bạn </pre>
+            <div class="icon">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+        </div>
+        <div class="login">
+            <h2> Đăng Ký</h2>
+            <form id="loginForm">
+                <div class="input">
+                    <input type="text" id="username" class="input1" placeholder="Tên Đăng Nhập" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input">
+                    <input type="email" id="email" class="input1" placeholder="Email" aria-label="Email" required>                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-solid fa-times" id="emailError" style="display: none; color: red;"></i>
+                    <i class="fa-solid fa-check" id="emailSuccess" style="display: none; color: green;"></i>
+                </div>
+                <div class="input">
+                    <input type="password" id="password" class="input1" placeholder="Mật Khẩu" required>
+                    <i class="fa-solid fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+                </div>
+                <div class="check">
+                    <label><input type="checkbox"> Nhớ tôi</label>
+                </div>
+                <div class="button" id="registerButtonContainer">
+                    <button class="btn" id="registerButton">Đăng Ký</button>
+                </div>
+                <div class="sign-up">
+                    <div id="error-message" style="color: red; display: none;"></div> <!-- Thông báo lỗi -->
+                    <div id="success-message" style="color: green; display: none;">
+                        Đăng ký thành công!
+                        <button id="backToLogin" style="margin-top: 10px; margin-left:-30px; display: none;">
+                            Quay lại trang đăng nhập
+                        </button>
+                    </div>
+                </div>
+                <div class="sign-up" id="signUpMessage" style="display: block;">
+                    <span class="signup-text">Bạn đã có tài khoản?</span>
+                    <span><a href="@Url.Action("Login")">Đăng Nhập</a></span>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            // Chuyển đổi type giữa 'password' và 'text'
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Thay đổi biểu tượng con mắt
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const emailErrorIcon = document.getElementById('emailError');
+        const emailSuccessIcon = document.getElementById('emailSuccess');
+
+        form.addEventListener('submit', function (event) {
+            const emailValue = emailInput.value;
+
+            // Kiểm tra nếu email không chứa gmail.com
+            if (!emailValue.endsWith('gmail.com')) {
+                alert('Please enter a valid email address ending with gmail.com');
+                emailErrorIcon.style.display = 'inline'; // Hiển thị biểu tượng dấu X
+                emailSuccessIcon.style.display = 'none'; // Ẩn biểu tượng dấu tích
+                event.preventDefault(); // Ngăn chặn việc gửi form
+            } else {
+                emailErrorIcon.style.display = 'none'; // Ẩn biểu tượng dấu X
+                emailSuccessIcon.style.display = 'inline'; // Hiển thị biểu tượng dấu tích
+            }
+        });
+
+        // Kiểm tra định dạng email ngay khi người dùng nhập
+        emailInput.addEventListener('input', function () {
+            if (!emailInput.value.endsWith('gmail.com')) {
+                emailErrorIcon.style.display = 'inline'; // Hiển thị biểu tượng dấu X
+                emailSuccessIcon.style.display = 'none'; // Ẩn biểu tượng dấu tích
+            } else {
+                emailErrorIcon.style.display = 'none'; // Ẩn biểu tượng dấu X
+                emailSuccessIcon.style.display = 'inline'; // Hiển thị biểu tượng dấu tích
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailErrorIcon = document.getElementById('emailError');
+            const emailSuccessIcon = document.getElementById('emailSuccess');
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+            const registerButtonContainer = document.getElementById('registerButtonContainer'); // Phần tử chứa nút đăng ký
+            const backToLoginButton = document.getElementById('backToLogin'); // Nút quay lại
+            const signUpMessage = document.getElementById('signUpMessage'); // Phần câu hỏi và liên kết đăng nhập
+
+            errorMessage.style.display = 'none'; // Ẩn thông báo lỗi ban đầu
+            successMessage.style.display = 'none'; // Ẩn thông báo thành công
+            backToLoginButton.style.display = 'none'; // Ẩn nút quay lại ban đầu
+            signUpMessage.style.display = 'block';
+
+            let isValid = true; // Biến để kiểm tra tính hợp lệ
+
+            // Kiểm tra tên đăng nhập
+            if (username.trim() === "") {
+                errorMessage.textContent = "Tên đăng nhập không được để trống.";
+                isValid = false;
+            }
+
+            // Kiểm tra email
+            if (!email.endsWith('gmail.com')) {
+                errorMessage.textContent = "Email phải kết thúc bằng gmail.com.";
+                emailErrorIcon.style.display = 'inline';
+                emailSuccessIcon.style.display = 'none';
+                isValid = false;
+            } else {
+                emailErrorIcon.style.display = 'none';
+                emailSuccessIcon.style.display = 'inline';
+            }
+
+            // Kiểm tra mật khẩu
+            if (password.length < 6) {
+                errorMessage.textContent = "Mật khẩu phải có ít nhất 6 ký tự.";
+                isValid = false;
+            }
+
+            // Nếu không hợp lệ, ngăn gửi biểu mẫu
+            if (!isValid) {
+                event.preventDefault(); // Ngăn không gửi biểu mẫu
+                errorMessage.style.display = 'block'; // Hiển thị thông báo lỗi
+            } else {
+                // Nếu hợp lệ, hiển thị thông báo thành công
+                event.preventDefault(); // Ngăn không gửi biểu mẫu để xử lý chuyển hướng
+                successMessage.style.display = 'block'; // Hiển thị thông báo thành công
+
+                // Ẩn nút đăng ký và hiển thị nút quay lại
+                registerButtonContainer.style.display = 'none'; // Ẩn nút đăng ký
+                signUpMessage.style.display = 'none'; // Ẩn phần câu hỏi và liên kết
+                backToLoginButton.style.display = 'block'; // Hiển thị nút quay lại
+
+                // Thêm sự kiện cho nút quay lại
+                backToLoginButton.addEventListener('click', function () {
+                    window.location.href = "@Url.Action("Login")"; // Thay đổi đường dẫn này thành đường dẫn trang đăng nhập của bạn
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
