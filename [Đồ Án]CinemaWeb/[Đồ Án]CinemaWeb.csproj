@@ -157,8 +157,11 @@
     <Content Include="Content\pictures\logo.png" />
     <Content Include="Content\pictures\Pleiku GIa Lai.jpg" />
     <Content Include="Content\pictures\quy-ăn-tang.jpg" />
+    <Content Include="Content\pictures\robot-hoang-da.jpg" />
     <Content Include="Content\pictures\Thứ 5 thành viên.jpg" />
+    <Content Include="Content\pictures\tin-hieu-cau-cuu.jpg" />
     <Content Include="Content\pictures\u22.jpg" />
+    <Content Include="Content\pictures\venom3.jpg" />
     <Content Include="Content\pictures\Địa chỉ.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

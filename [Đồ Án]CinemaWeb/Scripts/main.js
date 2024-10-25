@@ -59,24 +59,41 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cập nhật kích thước khi resize
     window.addEventListener('resize', updateSliderPosition);
 });
-document.querySelectorAll('.carousel').forEach(carousel => {
-    const inner = carousel.querySelector('.carousel-inner');
-    const items = inner.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
+//// Đoạn mã JavaScript cho slider
+//const sliderWrapper = document.querySelector('.slider-wrapper');
+//const slideLeftButton = document.querySelector('.slide-left');
+//const slideRightButton = document.querySelector('.slide-right');
+//let currentSlide = 0;
 
-    // Next Button
-    carousel.querySelector('.next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-    });
+//slideRightButton.addEventListener('click', () => {
+//    currentSlide = (currentSlide + 1) % sliderWrapper.children.length;
+//    sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+//});
 
-    // Prev Button
-    carousel.querySelector('.prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateCarousel();
-    });
+//slideLeftButton.addEventListener('click', () => {
+//    currentSlide = (currentSlide - 1 + sliderWrapper.children.length) % sliderWrapper.children.length;
+//    sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+//});
+//var mySwiper = new Swiper('.swiper-container', {
+//    slidesPerView: 5,
+//    loop: true,
+//    centeredSlides: true,
+//    effect: 'coverflow',
+//    coverflowEffect: {
+//        rotate: 0,
+//        stretch: 50,
+//        depth: 90,
+//        modifier: 1,
+//        slideShadows: false,
+//    },
+//    navigation: {
+//        prevEl: ".swiper-button-prev",
+//        nextEl: ".swiper-button-next"
+//    },
+//    pagination: {
+//        el: ".swiper-pagination",
+//        type: 'bullets',
+//        clickable: true
+//    },
 
-    function updateCarousel() {
-        inner.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-});
+//});
