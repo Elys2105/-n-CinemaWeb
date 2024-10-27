@@ -286,124 +286,72 @@
     .selection-option:hover .tooltip {
         display: block; /* Hiện tooltip khi di chuột vào mục */
     }
-.now-showing-section {
-    padding: 40px 0;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.now-showing-title-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 5%;
-}
-
-.now-showing-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    background-color: #800080;
-    padding: 10px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    white-space: nowrap;
-    width: fit-content;
-    color: white;
-}
-
-.now-showing-slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    overflow: hidden;
-    background-color: #000000;
-    padding: 20px;
-    border-radius: 10px;
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-}
-
-.now-showing-slider-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * 5); /* Đảm bảo chứa đủ 5 slide */
-}
-
-.now-showing-slide {
-    display: flex;
-    flex-direction: row; /* Đặt ảnh và khung trắng nằm ngang */
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 20%; /* Đảm bảo mỗi slide chiếm 1/5 chiều rộng */
-    position: relative;
-    transition: transform 0.5s, opacity 0.5s;
-    opacity: 0.5;
-    transform: scale(0.8) translateZ(-200px);
-    margin: 0 5px;
-}
-
-.now-showing-slide.active {
-    opacity: 1;
-    transform: scale(1.2) translateZ(0);
-    background-color: white; /* Đảm bảo nền trắng chỉ xuất hiện cho ảnh chính giữa */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng cho khung */
-}
-
-.now-showing-slide img {
-    width: 50%; /* Đảm bảo ảnh chiếm 50% chiều rộng */
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.movie-info {
-    width: 50%; /* Chiếm 50% chiều rộng còn lại */
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    text-align: left;
-    display: none; /* Mặc định ẩn khung trắng */
-    border-radius: 10px;
-}
-
-.now-showing-slide.active .movie-info {
-    display: block; /* Hiển thị khung trắng cho ảnh chính giữa */
-}
-
-.now-showing-slide-left,
-.now-showing-slide-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.now-showing-slide-left {
-    left: 10px;
-}
-
-.now-showing-slide-right {
-    right: 10px;
-}
-
-@@media (max-width: 768px) {
-    .now-showing-slide {
-        flex: 1 0 100%;
+   /* Đặt các thuộc tính cơ bản cho phần carousel */
+    /* CSS để định dạng các phim trong carousel */
+    .amy-movie-carousel-2 {
+        padding: 20px 0;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .now-showing-slide img, .movie-info {
+
+    .amy-movie-list {
+        display: flex;
+        overflow: hidden;
         width: 100%;
-        height: auto;
+        max-width: 1200px;
     }
-}
+
+    .amy-movie-item {
+        flex: 1 0 20%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .amy-movie-item-inner {
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .amy-movie-item-poster {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .amy-movie-item-poster img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    .amy-movie-item-content {
+        width: 50%;
+        padding: 20px;
+    }
+
+    .amy-movie-item-meta,
+    .amy-movie-item-button {
+        margin-top: 10px;
+    }
+
+        .amy-movie-item-button a {
+            background-color: #800080;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .amy-movie-item-button a:hover {
+                background-color: #c06c84;
+            }
 
 </style>
 <!DOCTYPE html>
@@ -412,8 +360,12 @@
     <meta charset="utf-8" />
     <title>Rạp phim Starlight</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Content/site.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -508,102 +460,170 @@
             </div>
         </div>
     </div>
-
-    <section class="now-showing-section">
-        <div class="now-showing-title-container">
-            <h2 class="now-showing-title">Now Showing</h2>
-        </div>
-        <div class="now-showing-slider-container">
-            <button class="now-showing-slide-left">&#10094;</button>
-            <div class="now-showing-slider-wrapper">
-                <div class="now-showing-slide">
-                    <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" alt="Movie 1">
-                    <div class="movie-info">
-                        <h3>Movie 1</h3>
-                        <p>Details about Movie 1</p>
+    <div class="amy-movie-carousel-2">
+        <div class="amy-movie-list">
+            <!-- Phim 1 -->
+            <div class="amy-movie-item">
+                <div class="amy-movie-item-inner">
+                    <div class="amy-movie-item-poster">
+                        <a href="/film/movie1.html">
+                            <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" alt="Movie 1 Poster">
+                        </a>
+                    </div>
+                    <div class="amy-movie-item-content">
+                        <h3 class="amy-movie-field-title">
+                            <a href="/film/movie1.html">Ác Quỷ Truy Hồn(T18)</a>
+                        </h3>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa">2D</span>
+                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i>2 hours</span>
+                        </div>                      
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa">Thể loại: Kinh dị</span>
+                        </div>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>  Sidharta Tara</span>
+                        </div>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 25/10/2024</span>
+                        </div>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa"><b>Diễn Viên</b>: Indah Permatasari, Claresta Taufan Kusumarina, José Rizal Manua,...</span>
+                        </div>
+                        <div class="amy-movie-item-button">
+                            <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="now-showing-slide">
-                    <img src="~/Content/pictures/nga-xua-mot-chuyen-tinh.jpg" alt="Movie 2">
-                    <div class="movie-info">
-                        <h3>Movie 2</h3>
-                        <p>Details about Movie 2</p>
-                    </div>
                 </div>
-                <div class="now-showing-slide active">
-                    <img src="~/Content/pictures/tin-hieu-cau-cuu.jpg" alt="Movie 3">
-                    <div class="movie-info">
-                        <h3>Movie 3</h3>
-                        <p>Details about Movie 3</p>
+           
+            <!-- Phim 2 -->
+            <div class="amy-movie-item">
+                <div class="amy-movie-item-inner">
+                    <div class="amy-movie-item-poster">
+                        <a href="/film/movie2.html">
+                            <img src="image2.jpg" alt="Movie 2 Poster">
+                        </a>
                     </div>
-                </div>
-                <div class="now-showing-slide active">
-                    <img src="~/Content/pictures/robot-hoang-da.jpg" alt="Movie 4">
-                    <div class="movie-info">
-                        <h3>Movie 4</h3>
-                        <p>Details about Movie 4</p>
-                    </div>
-                </div>
-                <div class="now-showing-slide active">
-                    <img src="~/Content/pictures/venom3.jpg" alt="Movie 5">
-                    <div class="movie-info">
-                        <h3>Movie 5</h3>
-                        <p>Details about Movie 5</p>
+                    <div class="amy-movie-item-content">
+                        <span class="amy-movie-field-imdb">T18</span>
+                        <h3 class="amy-movie-field-title">
+                            <a href="/film/movie2.html">Movie 2</a>
+                        </h3>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa">3D</span>
+                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 1.5 hours</span>
+                        </div>
+                        <div class="amy-movie-item-button">
+                            <a href="/film/movie2.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                <i class="fa fa-ticket"></i> Book Ticket
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button class="now-showing-slide-right">&#10095;</button>
-        </div>
-    </section>
 
+            <!-- Phim 3 -->
+            <div class="amy-movie-item">
+                <div class="amy-movie-item-inner">
+                    <div class="amy-movie-item-poster">
+                        <a href="/film/movie3.html">
+                            <img src="image3.jpg" alt="Movie 3 Poster">
+                        </a>
+                    </div>
+                    <div class="amy-movie-item-content">
+                        <span class="amy-movie-field-imdb">T18</span>
+                        <h3 class="amy-movie-field-title">
+                            <a href="/film/movie3.html">Movie 3</a>
+                        </h3>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa">2D</span>
+                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 2 hours</span>
+                        </div>
+                        <div class="amy-movie-item-button">
+                            <a href="/film/movie3.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                <i class="fa fa-ticket"></i> Book Ticket
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phim 4 -->
+            <div class="amy-movie-item">
+                <div class="amy-movie-item-inner">
+                    <div class="amy-movie-item-poster">
+                        <a href="/film/movie4.html">
+                            <img src="image4.jpg" alt="Movie 4 Poster">
+                        </a>
+                    </div>
+                    <div class="amy-movie-item-content">
+                        <span class="amy-movie-field-imdb">T18</span>
+                        <h3 class="amy-movie-field-title">
+                            <a href="/film/movie4.html">Movie 4</a>
+                        </h3>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa">3D</span>
+                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 1.75 hours</span>
+                        </div>
+                        <div class="amy-movie-item-button">
+                            <a href="/film/movie4.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                <i class="fa fa-ticket"></i> Book Ticket
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phim 5 -->
+            <div class="amy-movie-item">
+                <div class="amy-movie-item-inner">
+                    <div class="amy-movie-item-poster">
+                        <a href="/film/movie5.html">
+                            <img src="image5.jpg" alt="Movie 5 Poster">
+                        </a>
+                    </div>
+                    <div class="amy-movie-item-content">
+                        <span class="amy-movie-field-imdb">T18</span>
+                        <h3 class="amy-movie-field-title">
+                            <a href="/film/movie5.html">Movie 5</a>
+                        </h3>
+                        <div class="amy-movie-item-meta">
+                            <span class="amy-movie-field-mpaa">2D</span>
+                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 2.5 hours</span>
+                        </div>
+                        <div class="amy-movie-item-button">
+                            <a href="/film/movie5.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                <i class="fa fa-ticket"></i> Book Ticket
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <button class="slick-prev"><i class="fa fa-chevron-left"></i></button>
+    <button class="slick-next"><i class="fa fa-chevron-right"></i></button>
+
+    </div>
 
     <script src="~/Scripts/main.js"></script>
     <script src="~/Scripts/Booking.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slides = document.querySelectorAll('.now-showing-slide');
-            const totalSlides = slides.length;
-            const slideWrapper = document.querySelector('.now-showing-slider-wrapper');
-            let currentSlide = 1; // Bắt đầu từ slide giữa
-
-            function updateSlides() {
-                slides.forEach((slide, index) => {
-                    slide.classList.remove('active');
-                    if (index === currentSlide) {
-                        slide.classList.add('active');
-                    }
-                });
-                const offset = -((currentSlide - 1) * 100) / 3; // Điều chỉnh để slide ở giữa
-                slideWrapper.style.transform = `translateX(${offset}%)`;
-            }
-
-            function nextSlide() {
-                if (currentSlide === totalSlides - 1) {
-                    slideWrapper.style.transition = 'none'; // Tắt transition để không bị giật
-                    currentSlide = 1; // Quay về slide đầu tiên
-                    const offset = -((currentSlide - 1) * 100) / 3;
-                    slideWrapper.style.transform = `translateX(${offset}%)`;
-                    setTimeout(() => {
-                        slideWrapper.style.transition = 'transform 0.5s ease-in-out'; // Bật lại transition
-                        nextSlide();
-                    }, 20);
-                } else {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateSlides();
-                }
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide + 1 + totalSlides) % totalSlides;
-                updateSlides();
-            }
-
-            document.querySelector('.now-showing-slide-left').addEventListener('click', prevSlide);
-            document.querySelector('.now-showing-slide-right').addEventListener('click', nextSlide);
-
-            setInterval(nextSlide, 3000);
-
-            updateSlides();
+        $(document).ready(function () {
+            $('.amy-movie-list').slick({
+                infinite: true,
+                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,  // Thêm tính năng tự động chạy
+                autoplaySpeed: 3000  // Chạy sau mỗi 3 giây
+            });
         });
 
     </script>
