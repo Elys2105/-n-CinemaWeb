@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Liên Hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<!-- Phần Liên Hệ -->
+<div class="contact-section">
+    <div class="contact-info">
+        <h3>THÔNG TIN</h3>
+        <p>Hotline: 19001722</p>
+        <p><strong>TRỤ SỞ CHÍNH:</strong> 39 Trần Khánh Dư, Phường Tân Lợi, TP. Buôn Ma Thuột, Tỉnh Đắk Lắk, Việt Nam</p>
+        <p>Web: <a href="http://www.starlight.vn">www.starlight.vn</a></p>
+        <p>E-Mail: <a href="mailto:support@starlight.vn">support@starlight.vn</a></p>
+    </div>
+
+    <div class="contact-form">
+        <h3>GỬI LIÊN HỆ</h3>
+        <form>
+            <input type="text" placeholder="Họ tên" required />
+            <input type="email" placeholder="Email" required />
+            <input type="tel" placeholder="SĐT" required />
+            <textarea placeholder="Nội dung cần liên hệ..." required></textarea>
+            <button type="submit" class="btn-submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<!-- Phần Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="~/Content/Images/starlight-logo.png" alt="Starlight Logo" />
+        </div>
+        <div class="footer-info">
+            <p>Support: <a href="mailto:Support@Starlight.Vn">Support@Starlight.Vn</a></p>
+            <p>Hotline: <a href="tel:19001722">1900 1722</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-policy">
+            <h4>CHÍNH SÁCH</h4>
+            <ul>
+                <li><a href="#">Điều Khoản Chung</a></li>
+                <li><a href="#">Chính Sách Thanh Toán</a></li>
+                <li><a href="#">Chính Sách Giao Nhận</a></li>
+                <li><a href="#">Bảo Mật Thông Tin</a></li>
+                <li><a href="#">Kiểm Hàng, Đổi Trả/Hoàn Tiền</a></li>
+            </ul>
+        </div>
+        <div class="footer-app">
+            <h4>DOWNLOAD APP</h4>
+            <p>Tải Ngay Ứng Dụng Đặt Vé Online Cho Dế Yêu Của Bạn!</p>
+            <a href="#"><img src="~/Content/Images/google-play.png" alt="Google Play" /></a>
+            <a href="#"><img src="~/Content/Images/app-store.png" alt="App Store" /></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>CÔNG TY CỔ PHẦN ENTERTAINMENT 2020</p>
+        <p>Giấy chứng nhận đăng kí doanh nghiệp công ty cổ phần: 0402021264 đăng ký lần đầu ngày 03/01/2020</p>
+        <p>Cơ quan cấp: Phòng Đăng ký kinh doanh - Sở kế hoạch và đầu tư Thành phố Đà Nẵng</p>
+        <p>Địa chỉ: Tầng 4, Tòa nhà Nguyễn Kim, 46 Điện Biên Phủ, TP. Đà Nẵng, Việt Nam</p>
+        <p>Hotline: <a href="tel:19001722">19001722</a></p>
+    </div>
+</footer>
+
+<style>
+    /* CSS cho phần Liên Hệ */
+    .contact-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .contact-info, .contact-form {
+        width: 48%;
+    }
+
+        .contact-form form input, .contact-form form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+    .btn-submit {
+        background-color: #FF7F00;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* CSS cho phần Footer */
+    footer {
+        background-color: #222;
+        color: #ccc;
+        padding: 30px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer-logo img, .footer-app img {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .footer-info .social-icons a {
+        color: #ccc;
+        margin-right: 5px;
+    }
+
+    .footer-policy ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-policy ul li a {
+            color: #FF7F00;
+            text-decoration: none;
+        }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+        font-size: 0.9em;
+    }
+</style>
