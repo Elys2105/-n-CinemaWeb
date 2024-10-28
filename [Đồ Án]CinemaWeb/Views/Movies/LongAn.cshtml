@@ -1,0 +1,315 @@
+﻿@{
+    Layout = null;
+}
+<style type="text/css">
+    element.style {
+        background: transparent;
+        padding: 10px;
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+        border: 3px solid #f37737;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .schedule-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #f0643b;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+    .date-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .date-item {
+        flex: 1;
+        padding: 10px;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        margin: 5px;
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+    }
+
+        .date-item.active {
+            background-color: #f0643b;
+            color: #fff;
+        }
+
+        .date-item:hover {
+            background-color: #f0643b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    /* Header: Thanh điều hướng */
+    header {
+        background-color: #333;
+        padding: 1rem 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+    }
+
+    .logo a {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        list-style: none;
+    }
+
+        .nav-links li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            .nav-links li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+
+    .user-actions a {
+        color: #fff;
+        margin-left: 20px;
+        text-decoration: none;
+        background-color: #ff6600;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+
+
+    main {
+        padding: 2rem 0;
+    }
+
+    .movies-list {
+        width: 80%;
+        margin: auto;
+    }
+
+    .movie {
+        display: flex;
+        margin-bottom: 2rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .movie img {
+            width: 150px;
+            margin-right: 1rem;
+            border-radius: 5px;
+        }
+
+    .movie-info {
+        flex: 1;
+    }
+
+        .movie-info h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+    .showtimes {
+        margin-top: 1rem;
+    }
+
+        .showtimes button {
+            margin-right: 10px;
+            padding: 0.5rem 1rem;
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+            .showtimes button:hover {
+                background-color: #e55b00;
+            }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+    }
+</style>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Long An</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="browse-option-box" style=" background: transparent; padding: 10px; width: 100%; display: block; margin-bottom: 5px; border: 3px solid #f37737;">
+        <h3 style="width: 100%; text-align: center; color: #f37a3b;">STARLIGHT LONG AN</h3>
+        <p style="width: 100%; text-align: center; color: #22272b;">1900 1722</p>
+        <p style="width: 100%; text-align: center; color: #22272b;">Lầu 1, Lầu 3, Vincom Plaza L.A, góc đường Hùng Vương và Mai Thị Tốt, Phường 2, TP. Tân An</p>
+    </div>
+    <div class="date-bar">
+        <div class="date-item active">THỨ NĂM<br>24/10/2024</div>
+        <div class="date-item">THỨ SÁU<br>25/10/2024</div>
+        <div class="date-item">THỨ BẢY<br>26/10/2024</div>
+        <div class="date-item">CHỦ NHẬT<br>27/10/2024</div>
+        <div class="date-item">THỨ HAI<br>28/10/2024</div>
+        <div class="date-item">THỨ BA<br>29/10/2024</div>
+    </div>
+
+    <main>
+        <section>
+            <!-- Phim 1: Venom -->
+            <div class="movie">
+                <img src="~/Content/pictures/Trang Chu/venom3.jpg" />
+                <div class="movie-info">
+                    <h2>Venom: Kẻo Cuối (T13)</h2>
+                    <p><strong>Đạo diễn:</strong> Kelly Marcel</p>
+                    <p><strong>Diễn viên:</strong> Tom Hardy, Juno Temple ,Chiwetel Ejiofor, Clark Backo, Stephen Graham</p>
+                    <p><strong>Thể loại:</strong> Siêu anh hùng</p>
+                    <p class="description">
+                        Tom Hardy sẽ tái xuất trong bom tấn Venom: The Last Dance (Tựa Việt: Venom: Kèo Cuối)
+                        và phải đối mặt với kẻ thù lớn nhất từ trước đến nay - toàn bộ cơ...
+                    </p>
+                    <div class="showtimes">
+                        <button>19:10</button>
+                        <button>21:00</button>
+                        <button>23:30</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phim 2: Cô Dâu Hào Môn -->
+            <div class="movie">
+                <img src="~/Content/pictures/Trang Chu/co-dau-hao-mon (1).jpg" />
+                <div class="movie-info">
+                    <h2>Cô Dâu Hào Môn (T18)</h2>
+                    <p><strong>Đạo diễn:</strong> Vũ Ngọc Đãng</p>
+                    <p><strong>Diễn viên:</strong> Uyển Ân, Samuel An ,Thu Trang, Lê Giang, Kiều Minh Tuấn, NSND Hồng Vân,...</p>
+                    <p><strong>Thể loại:</strong> Tình cảm, Tâm lý</p>
+                    <p class="description">
+                        Phim lấy đề tài môn đăng hộ đối, kể về câu chuyện hôn nhân, lối sống và quy tắc của giới thượng lưu...
+                    </p>
+                    <div class="showtimes">
+                        <button class="showtime disabled">11:00</button>
+                        <button class="showtime disabled">13:00</button>
+                        <button class="showtime">16:10</button>
+                        <button class="showtime">17:25</button>
+                        <button class="showtime">18:40</button>
+                        <button class="showtime">19:40</button>
+                        <button class="showtime">21:50</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Phim 3: Domino: Lối Thoát Cuối Cùng -->
+            <div class="movie">
+                <img src="~/Content/pictures/domino_-_teaser_poster_-_kc_11102024.jpg" />
+                <div class="movie-info">
+                    <h2>Domino: Lối Thoát Cuối Cùng (T18)</h2>
+                    <p><strong>Đạo diễn:</strong> Nguyễn Phúc Huy Cường</p>
+                    <p><strong>Diễn viên:</strong> Trương Ngọc Ánh, Quách Ngọc Tuyên, Anh Tú, Quốc Cường, Huỳnh Anh Tuấn, Henry Nguyễn, Cát Hạ</p>
+                    <p><strong>Thể loại:</strong> Hành động</p>
+                    <p class="description">
+                        Sau khi cha bị kẻ ác sát hại, từ người ngoài cuộc, An (Thuận Nguyễn) từng bước bị kéo vào cuộc chiến của các phe đảng xã hội đen...
+                    </p>
+                    <div class="showtimes">
+                        <button>12:00</button>
+                        <button>14:20</button>
+                        <button>16:40</button>
+                        <button>19:10</button>
+                        <button>21:20</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phim 4: FUBAO: Bảo Bối Của Ông -->
+            <div class="movie">
+                <img src="~/Content/pictures/fubao.jpg" />
+                <div class="movie-info">
+                    <h2>FUBAO: Bảo Bối Của Ông (P)</h2>
+                    <p><strong>Đạo diễn:</strong> Đang cập nhật</p>
+                    <p><strong>Thể loại:</strong> Hoạt hình</p>
+                    <p class="description">
+                        Bộ phim kể về cuộc hành trình trưởng thành của gấu trúc khổng lồ Fubao ở Hàn Quốc từ khi sinh ra đến khi quay trở về Trung Quốc...
+                    </p>
+                    <div class="showtimes">
+                        <button>09:30</button>
+                        <button>11:45</button>
+                        <button>14:00</button>
+                        <button>16:15</button>
+                        <button>18:30</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Starlight Entertainment Center</p>
+    </footer>
+</body>
+</html>
+<script src="~/Views/Shared/JavaScriptBMT.js/StartLightBMTJavaScript.js"></script>
+
+

@@ -130,27 +130,32 @@
                     background-color: #c06c84; /* Màu nền khi hover */
                     color: white; /* Màu chữ khi hover */
                 }
-
     .slider-container {
         position: relative;
         width: 100%;
-        max-width: 1200px; /* Đặt theo kích thước header */
-        margin: 0 auto; /* Canh giữa */
-        overflow: hidden; /* Để ẩn các ảnh không hiển thị */
-        background-color: black; /* Nền đen */
+        max-width: 1200px; /* Set according to header size */
+        margin: 0 auto; /* Center align */
+        overflow: hidden; /* Hide non-visible images */
+        background-color: black; /* Black background */
     }
 
     .slider-wrapper {
         display: flex;
-        transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển động mượt */
+        transition: transform 0.5s ease-in-out; /* Smooth transition effect */
         width: 100%;
     }
 
         .slider-wrapper img {
-            width: 100%; /* Mỗi ảnh chiếm toàn bộ chiều rộng container */
-            height: auto; /* Đảm bảo tỷ lệ ảnh không bị thay đổi */
+            flex: 0 0 auto; /* Prevents images from stretching */
+            max-width: 100%; /* Each image takes full width of its container */
+            height: auto; /* Maintains aspect ratio */
+            object-fit: cover; /* Covers the container while maintaining aspect ratio */
         }
 
+        /* Optional: To set a specific height for the slider images */
+        .slider-wrapper img {
+            height: 500px; /* Set to desired height */
+        }
     /* Ẩn mũi tên mặc định */
     button {
         position: absolute;
@@ -295,17 +300,20 @@
         flex-direction: column;
         align-items: center;
     }
-
     .amy-movie-list {
         display: flex;
-        overflow: hidden;
+        flex-wrap: wrap;
         width: 100%;
         max-width: 1200px;
     }
 
     .amy-movie-item {
-        flex: 1 0 20%;
-        transition: transform 0.5s ease-in-out;
+        flex: 1 1 20%;
+        margin: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 250px; /* Fixed height for uniformity */
     }
 
     .amy-movie-item-inner {
@@ -315,6 +323,8 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        width: 100%;
+        height: 100%;
     }
 
     .amy-movie-item-poster {
@@ -322,36 +332,269 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 100%;
     }
 
         .amy-movie-item-poster img {
             max-width: 100%;
             height: auto;
+            max-height: 100%;
             display: block;
         }
 
     .amy-movie-item-content {
         width: 50%;
-        padding: 20px;
+        padding: 10px 15px; /* Slight padding adjustment */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
     }
 
-    .amy-movie-item-meta,
-    .amy-movie-item-button {
+    /* Style for movie title */
+    .amy-movie-item-title {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0;
+        line-height: 1.2;
+        height: 2.4em; /* Fixed height for two lines */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Style for metadata and button */
+    .amy-movie-item-meta {
+        font-size: 12px;
+        line-height: 1.2;
+        margin-top: auto; /* Align to the bottom */
+    }
+
+    .amy-movie-item-button a {
+        background-color: #800080;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
         margin-top: 10px;
     }
 
-        .amy-movie-item-button a {
-            background-color: #800080;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
+        .amy-movie-item-button a:hover {
+            background-color: #c06c84;
+        }
+    .slick-dots, .carousel-indicators {
+        display: none !important;
+    }
+
+    .amy-top-movies-area .amy-movie-heading h2 {
+        text-align: left; /* Align header to the left */
+        font-size: 24px;
+        color: #333;
+        margin: 0;
+    }
+    /*Phần Phim Sắp Chiếu*/
+    /* Khu vực chính cho các phim */
+    .singer-movie-carousel-2 {
+        padding: 20px 0;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .singer-movie-list {
+        display: flex;
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        gap: 10px; /* Khoảng cách giữa các phim */
+    }
+
+    .singer-movie-item {
+        flex: 1 1 23%; /* Điều chỉnh để phù hợp với khoảng cách mới */
+        max-width: 250px;
+        box-sizing: border-box;
+        margin: 10px; /* Thêm khoảng cách xung quanh mỗi phim */
+    }
+
+    .singer-movie-item-inner {
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+        .singer-movie-item-inner:hover {
+            transform: scale(1.05); /* Giảm scale để tránh ảnh bị cắt */
         }
 
-            .amy-movie-item-button a:hover {
-                background-color: #c06c84;
+    .singer-movie-item-poster {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .singer-movie-item-poster img {
+            width: 100%;
+            height: auto;
+            max-height: none;
+        }
+
+    .thumb-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .singer-movie-item-inner:hover .thumb-hover {
+        opacity: 1;
+    }
+
+    .thumb-hover .play-video {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+    /* Ẩn phần chi tiết để chỉ hiển thị ảnh */
+    .top-movie-details {
+        padding: 10px;
+        text-align: center;
+    }
+
+        .top-movie-details h4 {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+        }
+
+            .top-movie-details h4 a {
+                color: inherit;
+                text-decoration: none;
+                transition: color 0.3s;
             }
+
+                .top-movie-details h4 a:hover {
+                    color: #c06c84;
+                }
+
+    /* Đặt căn giữa container chính */
+    /* Đặt căn giữa container chính */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Định dạng tiêu đề */
+    .movies-banner-heading h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Đặt flex cho danh sách banner */
+    .movies-banner-carousel-2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .movies-banner-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Khoảng cách giữa các banner */
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    /* Định dạng cho từng banner phim */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Định dạng tiêu đề */
+    .movies-banner-heading h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Đặt flex cho danh sách banner */
+    .movies-banner-carousel-2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .movies-banner-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Tăng khoảng cách giữa các banner */
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    /* Định dạng cho từng banner phim */
+    .movies-banner {
+        flex: 1 1 23%; /* Đặt chiều rộng cho mỗi banner */
+        max-width: 250px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        margin: 10px; /* Thêm khoảng cách xung quanh từng banner */
+    }
+
+        .movies-banner:hover {
+            transform: scale(1.05); /* Phóng to khi hover */
+        }
+
+        /* Định dạng hình ảnh banner */
+        .movies-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px; /* Bo tròn góc nếu muốn */
+        }
+
+        /* Hiệu ứng overlay khi hover */
+        .movies-banner a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+            .movies-banner a::after {
+                content: attr(alt);
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 14px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+        .movies-banner:hover a::after {
+            opacity: 1;
+        }
 
 </style>
 <!DOCTYPE html>
@@ -360,12 +603,11 @@
     <meta charset="utf-8" />
     <title>Rạp phim Starlight</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Content/site.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -400,7 +642,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="~/Home/Home">Trang Chủ</a></li>
-                    <li><a href="#">Lịch Chiếu</a></li>
+                    <li><a href="~/Movies/LichChieu">Lịch Chiếu</a></li>
                     <li><a href="#">Phim</a></li>
                     <li><a href="~/User/KhuyenMai">Khuyến Mãi</a></li>
                     <li><a href="#">Điện Ảnh</a></li>
@@ -414,7 +656,7 @@
         <div class="slider-wrapper">
             <img src="~/Content/pictures/joker-lady.jpg" />
             <img src="~/Content/pictures/123.jpg" />
-            <img src="~/Content/pictures/co-dau-hao-mon.jpg" />
+            <img src="~/Content/pictures/co-dau-hao-mon-ngang.jpg" />
             <img src="~/Content/pictures/quy-ăn-tang.jpg" />
         </div>
         <button class="slide-left"><i class="fas fa-chevron-left"></i></button>
@@ -460,152 +702,420 @@
             </div>
         </div>
     </div>
-    <div class="amy-movie-carousel-2">
-        <div class="amy-movie-list">
-            <!-- Phim 1 -->
-            <div class="amy-movie-item">
-                <div class="amy-movie-item-inner">
-                    <div class="amy-movie-item-poster">
-                        <a href="/film/movie1.html">
-                            <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" alt="Movie 1 Poster">
-                        </a>
-                    </div>
-                    <div class="amy-movie-item-content">
-                        <h3 class="amy-movie-field-title">
-                            <a href="/film/movie1.html">Ác Quỷ Truy Hồn(T18)</a>
-                        </h3>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa">2D</span>
-                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i>2 hours</span>
-                        </div>                      
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa">Thể loại: Kinh dị</span>
-                        </div>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>  Sidharta Tara</span>
-                        </div>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 25/10/2024</span>
-                        </div>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa"><b>Diễn Viên</b>: Indah Permatasari, Claresta Taufan Kusumarina, José Rizal Manua,...</span>
-                        </div>
-                        <div class="amy-movie-item-button">
-                            <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-           
-            <!-- Phim 2 -->
-            <div class="amy-movie-item">
-                <div class="amy-movie-item-inner">
-                    <div class="amy-movie-item-poster">
-                        <a href="/film/movie2.html">
-                            <img src="image2.jpg" alt="Movie 2 Poster">
-                        </a>
-                    </div>
-                    <div class="amy-movie-item-content">
-                        <span class="amy-movie-field-imdb">T18</span>
-                        <h3 class="amy-movie-field-title">
-                            <a href="/film/movie2.html">Movie 2</a>
-                        </h3>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa">3D</span>
-                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 1.5 hours</span>
-                        </div>
-                        <div class="amy-movie-item-button">
-                            <a href="/film/movie2.html" class="amy-btn-icon-text link-detail amy-fancybox">
-                                <i class="fa fa-ticket"></i> Book Ticket
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Phim 3 -->
-            <div class="amy-movie-item">
-                <div class="amy-movie-item-inner">
-                    <div class="amy-movie-item-poster">
-                        <a href="/film/movie3.html">
-                            <img src="image3.jpg" alt="Movie 3 Poster">
-                        </a>
-                    </div>
-                    <div class="amy-movie-item-content">
-                        <span class="amy-movie-field-imdb">T18</span>
-                        <h3 class="amy-movie-field-title">
-                            <a href="/film/movie3.html">Movie 3</a>
-                        </h3>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa">2D</span>
-                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 2 hours</span>
-                        </div>
-                        <div class="amy-movie-item-button">
-                            <a href="/film/movie3.html" class="amy-btn-icon-text link-detail amy-fancybox">
-                                <i class="fa fa-ticket"></i> Book Ticket
+    <!--Đang Chiếu-->
+    <section class="amy-top-movies-area">
+        <div class="container">
+            <div class="amy-movie-heading">
+                <h2>Phim:<span style="color: #c06c84"> Đang chiếu</span></h2>
+            </div>
+        </div>
+        <div class="amy-movie-carousel-2">
+            <div class="amy-movie-list">
+                <!-- Phim 1 -->
+                <div class="amy-movie-item">
+                    <div class="amy-movie-item-inner">
+                        <div class="amy-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Trang Chu/AC-QUY-TRUY-HON.jpg" alt="Ác Quỷ Truy Hồn">
                             </a>
+                        </div>
+                        <div class="amy-movie-item-content">
+                            <h3 class="amy-movie-field-title">
+                                <a href="/film/movie1.html">Ác Quỷ Truy Hồn - T18</a>
+                            </h3>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa">2D</span>
+                                <span class="amy-movie-field-duration">
+                                    <i class="fa-regular fa-clock"></i> 1 giờ 47 phút
+                                </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Thể loại</b>: Kinh dị</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>:  Sidharta Tara</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 25/10/2024</span>
+                            </div>
+                            <div class="amy-movie-item-button">
+                                <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                    <i class="fa fa-ticket"></i> Đặt vé
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Phim 4 -->
-            <div class="amy-movie-item">
-                <div class="amy-movie-item-inner">
-                    <div class="amy-movie-item-poster">
-                        <a href="/film/movie4.html">
-                            <img src="image4.jpg" alt="Movie 4 Poster">
-                        </a>
-                    </div>
-                    <div class="amy-movie-item-content">
-                        <span class="amy-movie-field-imdb">T18</span>
-                        <h3 class="amy-movie-field-title">
-                            <a href="/film/movie4.html">Movie 4</a>
-                        </h3>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa">3D</span>
-                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 1.75 hours</span>
-                        </div>
-                        <div class="amy-movie-item-button">
-                            <a href="/film/movie4.html" class="amy-btn-icon-text link-detail amy-fancybox">
-                                <i class="fa fa-ticket"></i> Book Ticket
+                <!-- Phim 2 -->
+                <div class="amy-movie-item">
+                    <div class="amy-movie-item-inner">
+                        <div class="amy-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Trang Chu/nga-xua-mot-chuyen-tinh.jpg" alt="Ngày xưa có một chuyện tình - T16">
                             </a>
+                        </div>
+                        <div class="amy-movie-item-content">
+                            <h3 class="amy-movie-field-title">
+                                <a href="/film/movie1.html">Ngày xưa có một chuyện tình - T16</a>
+                            </h3>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa">2D</span>
+                                <span class="amy-movie-field-duration">
+                                    <i class="fa-regular fa-clock"></i> 2 giờ 15 phút
+                                </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Thể loại</b>: Tình Cảm</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>:  Trịnh Đình Lê Minh</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 01/11/2024</span>
+                            </div>
+                            <div class="amy-movie-item-button">
+                                <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                    <i class="fa fa-ticket"></i> Đặt vé
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Phim 5 -->
-            <div class="amy-movie-item">
-                <div class="amy-movie-item-inner">
-                    <div class="amy-movie-item-poster">
-                        <a href="/film/movie5.html">
-                            <img src="image5.jpg" alt="Movie 5 Poster">
-                        </a>
-                    </div>
-                    <div class="amy-movie-item-content">
-                        <span class="amy-movie-field-imdb">T18</span>
-                        <h3 class="amy-movie-field-title">
-                            <a href="/film/movie5.html">Movie 5</a>
-                        </h3>
-                        <div class="amy-movie-item-meta">
-                            <span class="amy-movie-field-mpaa">2D</span>
-                            <span class="amy-movie-field-duration"><i class="fa fa-clock-o"></i> 2.5 hours</span>
-                        </div>
-                        <div class="amy-movie-item-button">
-                            <a href="/film/movie5.html" class="amy-btn-icon-text link-detail amy-fancybox">
-                                <i class="fa fa-ticket"></i> Book Ticket
+
+                <!-- Phim 3 -->
+                <div class="amy-movie-item">
+                    <div class="amy-movie-item-inner">
+                        <div class="amy-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Trang Chu/co-dau-hao-mon (1).jpg" alt="Cô dâu hào môn">
                             </a>
+                        </div>
+                        <div class="amy-movie-item-content">
+                            <h3 class="amy-movie-field-title">
+                                <a href="/film/movie1.html">Cô Dâu Hào Môn- T18</a>
+                            </h3>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa">2D</span>
+                                <span class="amy-movie-field-duration">
+                                    <i class="fa-regular fa-clock"></i> 1 giờ 54 phút
+                                </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Thể loại</b>: Tâm Lý, Tình Cảm </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>:   Vũ Ngọc Đãng</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 18/10/2024</span>
+                            </div>
+                            <div class="amy-movie-item-button">
+                                <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                    <i class="fa fa-ticket"></i> Đặt vé
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Phim 4 -->
+                <div class="amy-movie-item">
+                    <div class="amy-movie-item-inner">
+                        <div class="amy-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Trang Chu/robot-hoang-da.jpg" alt="Robot hoang dã">
+                            </a>
+                        </div>
+                        <div class="amy-movie-item-content">
+                            <h3 class="amy-movie-field-title">
+                                <a href="/film/movie1.html">Robot Hoang Dã - P</a>
+                            </h3>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa">2D</span>
+                                <span class="amy-movie-field-duration">
+                                    <i class="fa-regular fa-clock"></i> 1 giờ 42 phút
+                                </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Thể loại</b>: Hoạt Hình, Phiêu Lưu </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>:  Chris Sanders</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 11/10/2024</span>
+                            </div>
+                            <div class="amy-movie-item-button">
+                                <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                    <i class="fa fa-ticket"></i> Đặt vé
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phim 5 -->
+                <div class="amy-movie-item">
+                    <div class="amy-movie-item-inner">
+                        <div class="amy-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Trang Chu/tin-hieu-cau-cuu.jpg" alt="Tín hiệu cầu cứu">
+                            </a>
+                        </div>
+                        <div class="amy-movie-item-content">
+                            <h3 class="amy-movie-field-title">
+                                <a href="/film/movie1.html">Tín hiệu cầu cứu - T18</a>
+                            </h3>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa">2D</span>
+                                <span class="amy-movie-field-duration">
+                                    <i class="fa-regular fa-clock"></i> 1 giờ 43 phút
+                                </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Thể loại</b>: Bí Ẩn, Kinh Dị</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>:  Zoë Kravitz</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>:18/10/2024</span>
+                            </div>
+                            <div class="amy-movie-item-button">
+                                <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                    <i class="fa fa-ticket"></i> Đặt vé
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Phim 6 -->
+                <div class="amy-movie-item">
+                    <div class="amy-movie-item-inner">
+                        <div class="amy-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Trang Chu/tee-yod-2.jpg" alt="Tee Yod: Quỷ Ăn Tạng 2">
+                            </a>
+                        </div>
+                        <div class="amy-movie-item-content">
+                            <h3 class="amy-movie-field-title">
+                                <a href="/film/movie1.html">Tee Yod: Quỷ Ăn Tạng 2  - T13</a>
+                            </h3>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa">2D</span>
+                                <span class="amy-movie-field-duration">
+                                    <i class="fa-regular fa-clock"></i> 1 giờ 51 phút
+                                </span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Thể loại</b>: Kinh dị</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Đạo diễn</b>: Taweewat Wantha</span>
+                            </div>
+                            <div class="amy-movie-item-meta">
+                                <span class="amy-movie-field-mpaa"><b>Ngày Chiếu</b>: 18/10/2024</span>
+                            </div>
+                            <div class="amy-movie-item-button">
+                                <a href="/film/movie1.html" class="amy-btn-icon-text link-detail amy-fancybox">
+                                    <i class="fa fa-ticket"></i> Đặt vé
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <button class="slick-prev"><i class="fa fa-chevron-left"></i></button>
-    <button class="slick-next"><i class="fa fa-chevron-right"></i></button>
+    </section>
 
+    <!--Sắp Chiếu-->
+    <section class="singer-top-movies-area">
+        <div class="container">
+            <div class="singer-movie-heading">
+                <h2>Phim:<span style="color: #c06c84"> Sắp chiếu</span></h2>
+            </div>
+        </div>
+        <div class="singer-movie-carousel-2">
+            <div class="singer-movie-list">
+                <!-- Phim 1 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie1.html">
+                                <img src="~/Content/pictures/Sap Chieu/CONG-TU-BAC-LIEU.jpg" alt="Công Tử Bạc Liêu">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=q-wr0JDcvVk"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="cong-tu-bac-lieu.html">Công Tử Bạc Liêu</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 2 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie2.html">
+                                <img src="~/Content/pictures/Sap Chieu/DUNG-BUONG-TAY.jpg" alt="Đừng Buông Tay">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=LBKaAFV3TvU"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim2.html">Đừng Buông Tay</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 3 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie3.html">
+                                <img src="~/Content/pictures/Sap Chieu/LINH-MIU.jpg" alt="Linh Miêu">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=OVa8cZZQXfM"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim3.html">Linh Miêu</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 4 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie3.html">
+                                <img src="~/Content/pictures/Sap Chieu/MAT-MA-DO.jpg" alt="Mật Mã Đỏ">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=HKblerMyqvk"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim3.html">Mật Mã Đỏ</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 5 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie3.html">
+                                <img src="~/Content/pictures/Sap Chieu/THAN-DUOC.jpg" alt="Thần Dược">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=zBIDSp17AOo"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim3.html">Thần Dược</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 6 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie3.html">
+                                <img src="~/Content/pictures/Sap Chieu/THIEN-DUONG-QUA-BAO.jpg" alt="Thiên Đường Quả Báo">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=dQscfm4U0MA"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim3.html">Thiên Đường Quả Báo</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 7 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie3.html">
+                                <img src="~/Content/pictures/Sap Chieu/VAY-HAM-TAI-DAI-BAC.jpg" alt="Vây Hãm Tại Đài Bắc">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=AfybuJ8zOAI"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim3.html">Vây Hãm Tại Đài Bắc</a></h4>
+                    </div>
+                </div>
+                <!-- Phim 8 -->
+                <div class="singer-movie-item">
+                    <div class="singer-movie-item-inner">
+                        <div class="singer-movie-item-poster">
+                            <a href="/film/movie3.html">
+                                <img src="~/Content/pictures/Sap Chieu/VO-SI-GIAC-DAU-2.jpg" alt="Võ Sĩ Giác Đấu 2">
+                            </a>
+                        </div>
+                        <div class="thumb-hover">
+                            <a class="play-video" href="https://www.youtube.com/watch?v=R4AFSgUGEEs"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="top-movie-details">
+                        <h4><a href="phim3.html">Võ Sĩ Giác Đấu 2</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Khuyến Mãi và Sự Kiện-->
+    <div class="container">
+        <div class="movies-banner-heading">
+            <h2>Phim:<span style="color: #c06c84"> Khuyến Mãi và Sự Kiện</span></h2>
+        </div>
+    </div>
+    <div class="movies-banner-carousel-2">
+        <div class="movies-banner-list">
+            <!-- Phim 1 -->
+            <div class="movies-banner">
+                <a href="/film/movie1.html">
+                    <img src="~/Content/pictures/Banner/1.jpg" alt="Bảng Giá Vé Gold Class">
+                </a>
+            </div>
+
+            <!-- Phim 2 -->
+            <div class="movies-banner">
+                <a href="/film/movie1.html">
+                    <img src="~/Content/pictures/Banner/2.jpg" alt="Bảng Giá Vé Gold Class">
+                </a>
+            </div>
+
+            <!-- Phim 3 -->
+            <div class="movies-banner">
+                <a href="/film/movie1.html">
+                    <img src="~/Content/pictures/Banner/3.jpg" alt="Bảng Giá Vé Gold Class">
+                </a>
+            </div>
+
+            <!-- Phim 4 -->
+            <div class="movies-banner">
+                <a href="/film/movie1.html">
+                    <img src="~/Content/pictures/Banner/4.png" alt="Bảng Giá Vé Gold Class">
+                </a>
+            </div>
+
+            <!-- Phim 5 -->
+            <div class="movies-banner">
+                <a href="/film/movie1.html">
+                    <img src="~/Content/pictures/Banner/5.jpg" alt="Bảng Giá Vé Gold Class">
+                </a>
+            </div>
+        </div>
     </div>
 
     <script src="~/Scripts/main.js"></script>
@@ -627,6 +1137,94 @@
         });
 
     </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.singer-movie-list').slick({
+                infinite: true,
+                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,  // Tự động chạy
+                autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.movies-banner-list').slick({
+                infinite: true,
+                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,  // Tự động chạy
+                autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+     <script>
+     $(document).ready(function () {
+         $('.movies-banner-list').slick({
+             infinite: true,
+             slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
+             slidesToScroll: 1,
+             arrows: true,
+             dots: true,
+             autoplay: true,  // Tự động chạy
+             autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
+             responsive: [
+                 {
+                     breakpoint: 1024,
+                     settings: {
+                         slidesToShow: 2,
+                         slidesToScroll: 1
+                     }
+                 },
+                 {
+                     breakpoint: 768,
+                     settings: {
+                         slidesToShow: 1,
+                         slidesToScroll: 1
+                     }
+                 }
+             ]
+         });
+     });
+ </script>
     <div>
         @RenderBody() <!-- Phần nội dung sẽ được render tại đây -->
     </div>
