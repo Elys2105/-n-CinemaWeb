@@ -595,7 +595,104 @@
         .movies-banner:hover a::after {
             opacity: 1;
         }
+    /* General styling for hot movies section */
+    .hot-movies {
+        width: 100%;
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color:white;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
 
+    .hot-movies-heading h2 {
+        text-align: left;
+        color: black;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .hot-movies-heading span {
+        color: #c06c84;
+    }
+
+    .hot-movies-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Styling for each movie item */
+    .hot-movie {
+        display: flex;
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .hot-movie img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+    .movie-info {
+       flex: 1;
+    }
+        /* Title styling with hover effect */
+        .movie-info h2 {
+            font-size: 18px;
+            color: black;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+            .movie-info a{
+                text-decoration: none; /* Remove underline from link */
+            }
+
+            .movie-info h2:hover {
+                color: #c06c84; /* Pink color on hover for the title only */
+            }
+        /* Styling for other text elements */
+        .movie-info p {
+            font-size: 14px;
+            color: black;
+            margin: 5px 0;
+        }
+
+        .movie-info .description {
+            margin: 10px 0;
+            font-size: 13px;
+            color: black;
+        }
+
+    /* Button styling */
+    .hot-movies-item-button {
+        margin-top: 10px;
+    }
+
+    .movies-btn-icon-text {
+        display: inline-flex;
+        align-items: center;
+        background-color: #e74c3c;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+        .movies-btn-icon-text:hover {
+            background-color: #c0392b;
+        }
+
+        .movies-btn-icon-text i {
+            margin-right: 5px;
+        }
 </style>
 <!DOCTYPE html>
 <html lang="vi">
@@ -717,7 +814,7 @@
                     <div class="amy-movie-item-inner">
                         <div class="amy-movie-item-poster">
                             <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Trang Chu/AC-QUY-TRUY-HON.jpg" alt="Ác Quỷ Truy Hồn">
+                                <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" alt="Ác Quỷ Truy Hồn">
                             </a>
                         </div>
                         <div class="amy-movie-item-content">
@@ -753,7 +850,8 @@
                     <div class="amy-movie-item-inner">
                         <div class="amy-movie-item-poster">
                             <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Trang Chu/nga-xua-mot-chuyen-tinh.jpg" alt="Ngày xưa có một chuyện tình - T16">
+                                <img src="~/Content/pictures/nga-xua-mot-chuyen-tinh.jpg" alt="Ngày xưa có một chuyện tình - T16">
+
                             </a>
                         </div>
                         <div class="amy-movie-item-content">
@@ -790,7 +888,7 @@
                     <div class="amy-movie-item-inner">
                         <div class="amy-movie-item-poster">
                             <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Trang Chu/co-dau-hao-mon (1).jpg" alt="Cô dâu hào môn">
+                                <img src="~/Content/pictures/co-dau-hao-mon (1).jpg" alt="Cô dâu hào môn">
                             </a>
                         </div>
                         <div class="amy-movie-item-content">
@@ -827,7 +925,7 @@
                     <div class="amy-movie-item-inner">
                         <div class="amy-movie-item-poster">
                             <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Trang Chu/robot-hoang-da.jpg" alt="Robot hoang dã">
+                                <img src="~/Content/pictures/robot-hoang-da.jpg" alt="Robot hoang dã">
                             </a>
                         </div>
                         <div class="amy-movie-item-content">
@@ -863,7 +961,7 @@
                     <div class="amy-movie-item-inner">
                         <div class="amy-movie-item-poster">
                             <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Trang Chu/tin-hieu-cau-cuu.jpg" alt="Tín hiệu cầu cứu">
+                                <img src="~/Content/pictures/tin-hieu-cau-cuu.jpg" alt="Tín hiệu cầu cứu">
                             </a>
                         </div>
                         <div class="amy-movie-item-content">
@@ -898,7 +996,7 @@
                     <div class="amy-movie-item-inner">
                         <div class="amy-movie-item-poster">
                             <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Trang Chu/tee-yod-2.jpg" alt="Tee Yod: Quỷ Ăn Tạng 2">
+                                <img src="~/Content/pictures/tee-yod-2.jpg" alt="Tee Yod: Quỷ Ăn Tạng 2">
                             </a>
                         </div>
                         <div class="amy-movie-item-content">
@@ -1117,7 +1215,191 @@
             </div>
         </div>
     </div>
+    <!--Phim tháng 10-->
+    <section class="hot-movies">
+        <main>
+            <div class="hot-movies-heading">
+                <h2>Phim Hot:<span style="color: #c06c84"> Tháng 10</span></h2>
+            </div>
+            <div class="hot-movies-list">
+                <div class="hot-movie">
+                    <img src="~/Content/pictures/venom3.jpg" />
+                    <div class="movie-info">
+                        <div class="hot-movies-title">
+                            <a href="/film/movie1.html">
+                                <h2>Venom: Kèo Cuối (T13)</h2>
+                            </a>
 
+                        </div>
+                        <p style="color: #c06c84">  Siêu anh hùng</p>
+                        <div class="hot-movies-item-meta">
+                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                            <span class="hot-movies-field-duration" style="color: black">T13</span>
+                        </div>
+                        <p><strong>Đạo diễn:</strong> Kelly Marcel</p>
+                        <p><strong>Diễn viên:</strong> Tom Hardy, Juno Temple ,Chiwetel Ejiofor, Clark Backo, Stephen Graham</p>
+                        <p class="description">
+                            <b>Chi tiết: </b> Tom Hardy sẽ tái xuất trong bom tấn Venom: The Last Dance (Tựa Việt: Venom: Kèo Cuối)
+                            và phải đối mặt với kẻ thù lớn nhất từ trước đến nay - toàn bộ cơ...
+                        </p>
+                        <div class="hot-movies-item-button">
+                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="hot-movie">
+                    <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" />
+                    <div class="movie-info">
+                        <div class="hot-movies-title">
+                            <a href="/film/movie1.html">
+                                <h2>Ác Quỷ Truy Hồn</h2>
+                            </a>
+
+                        </div>
+                        <p style="color: #c06c84"> Kinh dị</p>
+                        <div class="hot-movies-item-meta">
+                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                            <span class="hot-movies-field-duration" style="color: black">T13</span>
+                        </div>
+                        <p><strong>Đạo diễn:</strong>  Sidharta Tara</p>
+                        <p><strong>Diễn viên:</strong> Indah Permatasari, Claresta Taufan Kusumarina, José Rizal Manua,...</p>
+                        <p class="description">
+                            <b>Chi tiết: </b>  Sau một tai nạn, cô gái trẻ Retno mất mẹ, trong khi cha cô rơi vào tình trạng hôn mê. Cô cùng chị gái mình quyết định đưa cha về chăm sóc,
+                            nhưng quãng thời gian này trở thành địa ngục với cả gia đình khi những sự kiện ghê rợn liên tiếp xảy ra. Cùng l...
+                        </p>
+                        <div class="hot-movies-item-button">
+                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="hot-movie">
+                    <img src="~/Content/pictures/co-dau-hao-mon.jpg" />
+                    <div class="movie-info">
+                        <div class="hot-movies-title">
+                            <a href="/film/movie1.html">
+                                <h2>Cô Dâu Hào Môn</h2>
+                            </a>
+
+                        </div>
+                        <p style="color: #c06c84"> Tâm Lý, Tình Cảm</p>
+                        <div class="hot-movies-item-meta">
+                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                            <span class="hot-movies-field-duration" style="color: black">T13</span>
+                        </div>
+                        <p><strong>Đạo diễn:</strong>   Vũ Ngọc Đãng</p>
+                        <p><strong>Diễn viên:</strong> Uyển Ân, Samuel An, Thu Trang, Lê Giang, Kiều Minh Tuấn, NSND Hồng Vân,...</p>
+                        <p class="description">
+                            <b>Chi tiết: </b> Phim lấy đề tài làm dâu hào môn và khai thác câu chuyện môn đăng hộ đối, lối sống và quy
+                            tắc của giới thượng lưu dưới góc nhìn hài hước và châm biếm.
+                        </p>
+                        <div class="hot-movies-item-button">
+                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="hot-movie">
+                    <img src="~/Content/pictures/tin-hieu-cau-cuu.jpg" />
+                    <div class="movie-info">
+                        <div class="hot-movies-title">
+                            <a href="/film/movie1.html">
+                                <h2>Tín Hiệu Cầu Cứu</h2>
+                            </a>
+
+                        </div>
+                        <p style="color: #c06c84"> Bí Ẩn, Kinh Dị</p>
+                        <div class="hot-movies-item-meta">
+                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                            <span class="hot-movies-field-duration" style="color: black">T13</span>
+                        </div>
+                        <p><strong>Đạo diễn:</strong>  Zoë Kravitz</p>
+                        <p><strong>Diễn viên:</strong> Naomi Ackie, Channing Tatum,...</p>
+                        <p class="description">
+                            <b>Chi tiết: </b> "Tín Hiệu Cầu Cứu" theo chân cô phục vụ cocktail Frida (do Naomi Ackie thủ vai)
+                            đã phải lòng tỷ phú công nghệ tên Slater King (Channing Tatum thủ vai) và theo chân anh ta tới một
+                            hòn đảo thiên đường, với rất nhiều thú vui xa xỉ. Đời không như là mơ b...
+                        </p>
+                        <div class="hot-movies-item-button">
+                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="hot-movie">
+                    <img src="~/Content/pictures/tee-yod-2.jpg" />
+                    <div class="movie-info">
+                        <div class="hot-movies-title">
+                            <a href="/film/movie1.html">
+                                <h2>Tee Yod: Quỷ Ăn Tạng 2</h2>
+                            </a>
+
+                        </div>
+                        <p style="color: #c06c84"> Kinh Dị</p>
+                        <div class="hot-movies-item-meta">
+                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                            <span class="hot-movies-field-duration" style="color: black">T13</span>
+                        </div>
+                        <p><strong>Đạo diễn:</strong>  Taweewat Wantha</p>
+                        <p>
+                            <strong>Diễn viên:</strong> Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee,
+                            Friend Peerakrit Phacharaboonyakiat, Nutthatcha Jessica Padovan
+                        </p>
+                        <p class="description">
+                            <b>Chi tiết: </b>Ba năm sau cái chết của Yam, Yak vẫn tiếp tục săn lùng linh hồn bí ẩn mặc áo choàng đen. Gặp một cô gái
+                            có triệu chứng giống Yam, Yak phát hiện ra người bảo vệ linh hồn, pháp sư ẩn dật Puang, sống trong một khu rừng đầy nguy hiểm.
+                            Giữa những phép thu...
+                        </p>
+                        <div class="hot-movies-item-button">
+                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="hot-movie">
+                    <img src="~/Content/pictures/robot-hoang-da.jpg" />
+                    <div class="movie-info">
+                        <div class="hot-movies-title">
+                            <a href="/film/movie1.html">
+                                <h2>Robot Hoang Dã</h2>
+                            </a>
+
+                        </div>
+                        <p style="color: #c06c84"> Hoạt Hình, Phiêu Lưu</p>
+                        <div class="hot-movies-item-meta">
+                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                            <span class="hot-movies-field-duration" style="color: black">P</span>
+                        </div>
+                        <p><strong>Đạo diễn:</strong>  Chris Sanders</p>
+                        <p>
+                            <strong>Diễn viên:</strong> Lupita Nyong'o, Pedro Pascal, Catherine O’hara, Bill Nighy,...
+                        </p>
+                        <p class="description">
+                            <b>Chi tiết: </b> Cuộc phiêu lưu hoành tráng theo chân hành trình của một robot — đơn vị ROZZUM 7134, gọi tắt là Roz.
+                            Roz vô tình dạt vào hoang đảo sau một sự cố và nơi đây trở thành địa điểm sống mới của cô. Tại đây, Roz kết thân và nhận
+                            nuôi một chú ngỗng con, đặt t...
+                        </p>
+                        <div class="hot-movies-item-button">
+                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                                <i class="fa fa-ticket"></i> Đặt vé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
     <script src="~/Scripts/main.js"></script>
     <script src="~/Scripts/Booking.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1196,35 +1478,35 @@
             });
         });
     </script>
-     <script>
-     $(document).ready(function () {
-         $('.movies-banner-list').slick({
-             infinite: true,
-             slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
-             slidesToScroll: 1,
-             arrows: true,
-             dots: true,
-             autoplay: true,  // Tự động chạy
-             autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
-             responsive: [
-                 {
-                     breakpoint: 1024,
-                     settings: {
-                         slidesToShow: 2,
-                         slidesToScroll: 1
-                     }
-                 },
-                 {
-                     breakpoint: 768,
-                     settings: {
-                         slidesToShow: 1,
-                         slidesToScroll: 1
-                     }
-                 }
-             ]
-         });
-     });
- </script>
+    <script>
+        $(document).ready(function () {
+            $('.movies-banner-list').slick({
+                infinite: true,
+                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,  // Tự động chạy
+                autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
     <div>
         @RenderBody() <!-- Phần nội dung sẽ được render tại đây -->
     </div>
