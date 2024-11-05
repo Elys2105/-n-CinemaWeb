@@ -17,5 +17,9 @@ namespace _Đồ_Án_CinemaWeb.Controllers
         {
             return View();
         }
+        public ActionResult test()
+        {
+            return View();
+        }
     }
 }

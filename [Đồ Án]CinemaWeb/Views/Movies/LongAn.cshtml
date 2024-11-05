@@ -2,22 +2,143 @@
     Layout = null;
 }
 <style type="text/css">
-    element.style {
-        background: transparent;
-        padding: 10px;
-        width: 100%;
-        display: block;
-        margin-bottom: 5px;
-        border: 3px solid #f37737;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     body {
+        background: url(/Content/pictures/bgs6.jpg);
+        background-size: contain;
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
     }
 
+    /* Thanh đen trên cùng */
+    .header-top {
+        background-color: #000;
+        padding: 10px 0; /* Khoảng cách trong */
+        color: white;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between; /* Căn trái phải */
+        align-items: center;
+        max-width: 1300px;
+        margin: 0 auto; /* Canh giữa container */
+        padding: 0 20px;
+    }
+
+    /* Phần mạng xã hội bên phải */
+    .right-social ul {
+        list-style: none;
+        display: flex;
+        gap: 10px; /* Khoảng cách giữa các biểu tượng */
+    }
+
+        .right-social ul li {
+            display: inline;
+        }
+
+            .right-social ul li a {
+                font-size: 24px; /* Kích thước biểu tượng */
+                color: #c06c84; /* Màu sắc của biểu tượng */
+                transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+            }
+
+                .right-social ul li a:hover {
+                    color: #c06c84
+                }
+
+    /* Phần liên kết bên trái */
+    .left-text ul {
+        list-style: none;
+        display: flex;
+        gap: 20px; /* Khoảng cách giữa các liên kết */
+    }
+
+        .left-text ul li {
+            display: inline;
+        }
+
+            .left-text ul li a {
+                color: white; /* Màu chữ trắng */
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+                .left-text ul li a.btn {
+                    background-color: #c06c84; /* Màu nền cam cho nút */
+                    padding: 5px 10px; /* Khoảng cách trong của nút */
+                    border-radius: 5px; /* Bo tròn góc nút */
+                    color: white;
+                }
+
+                    .left-text ul li a.btn:hover {
+                        background-color: #e69500; /* Màu khi hover trên nút */
+                    }
+    /* Logo */
+    .logo img {
+        max-height: 60px; /* Chiều cao tối đa cho logo */
+        margin: 0 auto; /* Căn giữa logo */
+    }
+
+    /* Thanh menu */
+    .header-menu {
+        background-color: white;
+        padding: 10px 0; /* Khoảng cách trong */
+        color: white;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .main-nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly; /* Căn đều các mục */
+        padding: 0; /* Bỏ padding cho ul */
+        margin: 0; /* Bỏ margin cho ul */
+    }
+
+        .main-nav ul li {
+            flex: 1; /* Mỗi mục chiếm đều một phần của không gian */
+            text-align: center; /* Căn giữa nội dung */
+        }
+
+            .main-nav ul li a {
+                text-decoration: none;
+                color: #333; /* Màu chữ mặc định */
+                font-size: 18px;
+                padding: 15px 0; /* Khoảng cách trên và dưới */
+                display: block; /* Bao phủ toàn bộ khu vực */
+                min-width: 120px; /* Chiều rộng tối thiểu cho các mục */
+                transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
+            }
+
+                .main-nav ul li a:hover {
+                    background-color: #c06c84; /* Màu nền khi hover */
+                    color: white; /* Màu chữ khi hover */
+                }
+
+            .main-nav ul li a {
+                text-decoration: none;
+                color: #333; /* Màu chữ mặc định */
+                font-size: 18px;
+                padding: 15px 0; /* Thêm khoảng cách trên và dưới */
+                display: block; /* Thay đổi thành block để bao phủ toàn bộ khu vực */
+                min-width: 120px; /* Đặt chiều rộng tối thiểu cho các mục */
+                transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
+            }
+
+                .main-nav ul li a:hover {
+                    background-color: #c06c84; /* Màu nền khi hover */
+                    color: white; /* Màu chữ khi hover */
+                }
     .schedule-container {
         width: 100%;
         max-width: 800px;
@@ -28,21 +149,28 @@
         text-align: center;
     }
 
-    .header {
+    .browse-option-box {
         padding-bottom: 20px;
         border-bottom: 1px solid #ddd;
+        background-color:#dcdcdc;
+        padding: 10px;
+        width: 100%;
+        display: block;
+        margin: auto;
+        border: 3px solid #f37737;
+        max-width:1300px;
     }
 
-        .header h2 {
-            margin: 0;
-            font-size: 24px;
-            color: #f0643b;
+        .browse-option-box h3 {
+            width: 100%;
+            text-align: center;
+            color: #f37a3b;
         }
 
-        .header p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #333;
+        .browse-option-box p {
+            width: 100%;
+            text-align: center;
+            color: #22272b;
         }
 
     .date-bar {
@@ -72,19 +200,6 @@
             color: #fff;
             cursor: pointer;
         }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-    }
-
     /* Header: Thanh điều hướng */
     header {
         background-color: #333;
@@ -201,13 +316,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starlight Long An</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
 <body>
+    <div class="header-top">
+        <div class="container">
+            <!-- Phần mạng xã hội bên phải -->
+            <div class="right-social">
+                <ul>
+                    <li><i class="fab fa-facebook-square" style="color: #c06c84;"></i></li>
+                    <li><i class="fab fa-twitter-square" style="color: #c06c84;"></i></li>
+                    <li><i class="fab fa-google-plus-square" style="color: #c06c84;"></i></li>
+                    <li><i class="fab fa-instagram-square" style="color: #c06c84;"></i></li>
+                    <li><i class="fab fa-pinterest-square" style="color: #c06c84;"></i></li>
+                </ul>
+            </div>
+            <!-- Phần liên kết bên trái -->
+            <div class="left-text">
+                <ul>
+                    <li><a href="~/Home/FAQ">FAQ's</a></li>
+                    <li><a href="~/User/Login" class="btn">Đăng Nhập</a></li>
+                    <li><a href="~/User/Resgiter" class="btn">Đăng Ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <div class="browse-option-box" style=" background: transparent; padding: 10px; width: 100%; display: block; margin-bottom: 5px; border: 3px solid #f37737;">
-        <h3 style="width: 100%; text-align: center; color: #f37a3b;">STARLIGHT LONG AN</h3>
-        <p style="width: 100%; text-align: center; color: #22272b;">1900 1722</p>
-        <p style="width: 100%; text-align: center; color: #22272b;">Lầu 1, Lầu 3, Vincom Plaza L.A, góc đường Hùng Vương và Mai Thị Tốt, Phường 2, TP. Tân An</p>
+    <!-- Logo và thanh menu -->
+    <div class="header-menu">
+        <div class="container">
+            <img src="~/Content/pictures/logo.png" alt="Logo Starlight" />
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="~/Home/Home">Trang Chủ</a></li>
+                    <li><a href="~/Movies/LichChieu">Lịch Chiếu</a></li>
+                    <li><a href="#">Phim</a></li>
+                    <li><a href="~/User/KhuyenMai">Khuyến Mãi</a></li>
+                    <li><a href="#">Điện Ảnh</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="#">Tuyển Dụng</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="browse-option-box">
+        <h3>STARLIGHT LONG AN</h3>
+        <p>1900 1722</p>
+        <p>Lầu 1, Lầu 3, Vincom Plaza L.A, góc đường Hùng Vương và Mai Thị Tốt, Phường 2, TP. Tân An</p>
     </div>
     <div class="date-bar">
         <div class="date-item active">THỨ NĂM<br>24/10/2024</div>

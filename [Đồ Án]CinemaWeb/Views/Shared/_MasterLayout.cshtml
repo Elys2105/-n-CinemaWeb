@@ -7,6 +7,8 @@
     }
 
     body {
+        background: url(/Content/pictures/bgs6.jpg);
+        background-size: contain;
         font-family: Arial, sans-serif;
     }
 
@@ -15,13 +17,16 @@
         background-color: #000;
         padding: 10px 0; /* Khoảng cách trong */
         color: white;
+        width:100%;
+        max-width: 1300px;
+        margin:auto;
     }
 
     .container {
         display: flex;
         justify-content: space-between; /* Căn trái phải */
         align-items: center;
-        max-width: 1200px;
+        max-width: 1300px;
         margin: 0 auto; /* Canh giữa container */
         padding: 0 20px;
     }
@@ -82,10 +87,12 @@
 
     /* Thanh menu */
     .header-menu {
-        display: flex; /* Căn giữa theo chiều dọc */
-        align-items: center;
-        background-color: #fff; /* Màu nền cho thanh menu */
-        height: 60px; /* Chiều cao cho thanh menu */
+        background-color: white;
+        padding: 10px 0; /* Khoảng cách trong */
+        color: white;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
     }
 
     .main-nav ul {
@@ -133,7 +140,7 @@
     .slider-container {
         position: relative;
         width: 100%;
-        max-width: 1200px; /* Set according to header size */
+        max-width: 1300px; /* Set according to header size */
         margin: 0 auto; /* Center align */
         overflow: hidden; /* Hide non-visible images */
         background-color: black; /* Black background */
@@ -154,7 +161,7 @@
 
         /* Optional: To set a specific height for the slider images */
         .slider-wrapper img {
-            height: 500px; /* Set to desired height */
+            height: 600px; /* Set to desired height */
         }
     /* Ẩn mũi tên mặc định */
     button {
@@ -188,17 +195,13 @@
         right: 10px;
     }
 
-    .showtimes {
-        padding: 20px; /* Khoảng cách trong cho phần lựa chọn */
-    }
-
     .selection-menu {
         display: flex; /* Đặt chế độ flex để các phần nằm ngang */
         justify-content: space-between; /* Căn đều không gian giữa các mục */
         background-color: orange; /* Nền cam */
-        border-radius: 5px; /* Bo tròn góc */
+        /*border-radius: 5px;*/ /* Bo tròn góc */
         padding: 10px; /* Khoảng cách trong */
-        max-width: 1200px; /* Đặt chiều rộng tối đa như header */
+        max-width: 1300px; /* Đặt chiều rộng tối đa như header */
         margin: 0 auto; /* Canh giữa */
     }
 
@@ -291,20 +294,30 @@
     .selection-option:hover .tooltip {
         display: block; /* Hiện tooltip khi di chuột vào mục */
     }
-   /* Đặt các thuộc tính cơ bản cho phần carousel */
     /* CSS để định dạng các phim trong carousel */
+    .amy-container {
+        display: flex;
+        justify-content: left;
+        max-width: 1300px;
+        margin: 0 auto;
+        background-image: url('../../content/pictures/bgs4.jpg');
+        left: 20px;
+    }
     .amy-movie-carousel-2 {
         padding: 20px 0;
-        background-color: #f0f0f0;
+        background-image: url('../../content/pictures/bgs4.jpg');
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
     }
     .amy-movie-list {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1250px;
     }
 
     .amy-movie-item {
@@ -388,25 +401,44 @@
         display: none !important;
     }
 
-    .amy-top-movies-area .amy-movie-heading h2 {
+    .amy-movie-heading h2 {
         text-align: left; /* Align header to the left */
-        font-size: 24px;
+        font-size: 23px;
         color: #333;
-        margin: 0;
+        margin: 20px 0 0;
+        padding-left: 20px;
     }
     /*Phần Phim Sắp Chiếu*/
     /* Khu vực chính cho các phim */
+    .singer-container{
+        display: flex;
+        justify-content: left;
+        max-width: 1300px;
+        margin: 0 auto;
+        background-image: url('../../content/pictures/bgs4.jpg');
+        left: 20px;
+    }
     .singer-movie-carousel-2 {
         padding: 20px 0;
-        background-color: #f0f0f0;
+        background-image: url('../../content/pictures/bgs4.jpg');
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
+    }
+    .singer-movie-heading h2{
+        text-align: left; /* Align header to the left */
+        font-size: 23px;
+        color: #333;
+        margin: 20px 0 0;
+        padding-left: 20px;
     }
     .singer-movie-list {
         display: flex;
         justify-content: center;
-        max-width: 1200px;
+        max-width: 1300px;
         width: 100%;
         margin: 0 auto;
         gap: 10px; /* Khoảng cách giữa các phim */
@@ -423,6 +455,7 @@
         overflow: hidden;
         transition: transform 0.3s ease;
         position: relative;
+        border-radius:10px;
     }
 
         .singer-movie-item-inner:hover {
@@ -475,7 +508,7 @@
         .top-movie-details h4 {
             font-size: 16px;
             margin: 0;
-            color: #333;
+            color: white;
         }
 
             .top-movie-details h4 a {
@@ -489,18 +522,22 @@
                 }
 
     /* Đặt căn giữa container chính */
-    /* Đặt căn giữa container chính */
-    .container {
-        max-width: 1200px;
+    .movies-container {
+        display: flex;
+        justify-content: left;
+        max-width: 1300px;
         margin: 0 auto;
-        padding: 20px;
+        background-image: url('../../content/pictures/bgs5.jpg');
+        left: 20px;
     }
 
     /* Định dạng tiêu đề */
     .movies-banner-heading h2 {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 20px;
+        text-align: left; /* Align header to the left */
+        font-size: 23px;
+        color: #333;
+        margin: 20px 0 0;
+        padding-left: 20px;
     }
 
     /* Đặt flex cho danh sách banner */
@@ -519,8 +556,8 @@
     }
 
     /* Định dạng cho từng banner phim */
-    .container {
-        max-width: 1200px;
+    .moviescontainer {
+        max-width: 1300px;
         margin: 0 auto;
         padding: 20px;
     }
@@ -543,8 +580,9 @@
         flex-wrap: wrap;
         gap: 20px; /* Tăng khoảng cách giữa các banner */
         justify-content: center;
-        max-width: 1200px;
+        max-width: 1300px;
         width: 100%;
+        background-image: url('../../content/pictures/bgs5.jpg');
     }
 
     /* Định dạng cho từng banner phim */
@@ -566,7 +604,7 @@
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 8px; /* Bo tròn góc nếu muốn */
+            border-radius: 10px; /* Bo tròn góc nếu muốn */
         }
 
         /* Hiệu ứng overlay khi hover */
@@ -596,6 +634,11 @@
             opacity: 1;
         }
     /* General styling for hot movies section */
+    .container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
     .hot-movies {
         width: 100%;
         max-width: 1300px;
@@ -619,8 +662,12 @@
 
     .hot-movies-list {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 20px; /* Tăng khoảng cách giữa các banner */
+        justify-content: center;
+        max-width: 1400px;
+        width: 100%;
+        margin:20px auto;
     }
 
     /* Styling for each movie item */
@@ -633,10 +680,10 @@
     }
 
         .hot-movie img {
-            width: 150px;
+            width: 200px;
             height: auto;
             border-radius: 8px;
-            margin-right: 15px;
+            margin-right: 5px;
         }
     .movie-info {
        flex: 1;
@@ -693,6 +740,129 @@
         .movies-btn-icon-text i {
             margin-right: 5px;
         }
+    /* Container footer tổng */
+    .footer-section {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        padding: 40px 20px;
+        font-size: 14px;
+        width:100%;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    /* Phần thông tin liên hệ */
+    .footer-info {
+        width: 30%;
+    }
+
+    .footer-logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .footer-info p {
+        margin: 10px 0;
+    }
+
+    .footer-info a {
+        color: #f37021;
+        text-decoration: none;
+    }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+    /* Biểu tượng mạng xã hội */
+    .social-icons a {
+        color: #ffffff;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+        .social-icons a:hover {
+            color: #f37021;
+        }
+
+    /* Phần chính sách */
+    .footer-policy {
+        width: 30%;
+    }
+
+        .footer-policy h4 {
+            color: #f37021;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-policy ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .footer-policy ul li {
+                margin-bottom: 10px;
+            }
+
+                .footer-policy ul li a {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+
+                    .footer-policy ul li a:hover {
+                        text-decoration: underline;
+                    }
+
+    /* Phần download app */
+    .footer-download {
+        width: 30%;
+    }
+
+        .footer-download h4 {
+            color: #f37021;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+    .app-icons img {
+        max-width: 120px;
+        margin-right: 10px;
+    }
+
+    .gov-badge {
+        max-width: 150px;
+        margin-top: 10px;
+    }
+
+    /* Phần thông tin công ty */
+    .footer-company-info {
+        text-align: left;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        padding-top: 20px;
+    }
+
+        .footer-company-info p {
+            margin: 5px 0;
+        }
+
+        .footer-company-info a {
+            color: #f37021;
+        }
+
+    .black-wrapper {
+        background-color: dimgray; /* Màu nền đen */
+        padding: 30px; /* Khoảng cách xung quanh nội dung */
+    }
+
 </style>
 <!DOCTYPE html>
 <html lang="vi">
@@ -733,7 +903,7 @@
     </div>
 
     <!-- Logo và thanh menu -->
-    <div class="logo">
+    <div class="header-menu">
         <div class="container">
             <img src="~/Content/pictures/logo.png" alt="Logo Starlight" />
             <nav class="main-nav">
@@ -802,9 +972,9 @@
 
     <!--Đang Chiếu-->
     <section class="amy-top-movies-area">
-        <div class="container">
+        <div class="amy-container">
             <div class="amy-movie-heading">
-                <h2>Phim:<span style="color: #c06c84"> Đang chiếu</span></h2>
+                <h2 style="color:white">Phim:<span style="color: #c06c84"> Đang chiếu</span></h2>
             </div>
         </div>
         <div class="amy-movie-carousel-2">
@@ -1028,485 +1198,435 @@
                 </div>
             </div>
         </div>
+
+
+        <!--Sắp Chiếu-->
+        <div class="row">
+            <div class="singer-container">
+                <div class="singer-movie-heading">
+                    <h2 style="color:white">Phim:<span style="color: #c06c84"> Sắp chiếu</span></h2>
+                </div>
+            </div>
+            <div class="singer-movie-carousel-2">
+                <div class="singer-movie-list">
+                    <!-- Phim 1 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie1.html">
+                                    <img src="~/Content/pictures/Sap Chieu/CONG-TU-BAC-LIEU.jpg" alt="Công Tử Bạc Liêu">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=q-wr0JDcvVk"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="cong-tu-bac-lieu.html">Công Tử Bạc Liêu</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 2 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie2.html">
+                                    <img src="~/Content/pictures/Sap Chieu/DUNG-BUONG-TAY.jpg" alt="Đừng Buông Tay">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=LBKaAFV3TvU"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim2.html">Đừng Buông Tay</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 3 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie3.html">
+                                    <img src="~/Content/pictures/Sap Chieu/LINH-MIU.jpg" alt="Linh Miêu">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=OVa8cZZQXfM"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim3.html">Linh Miêu</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 4 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie3.html">
+                                    <img src="~/Content/pictures/Sap Chieu/MAT-MA-DO.jpg" alt="Mật Mã Đỏ">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=HKblerMyqvk"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim3.html">Mật Mã Đỏ</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 5 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie3.html">
+                                    <img src="~/Content/pictures/Sap Chieu/THAN-DUOC.jpg" alt="Thần Dược">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=zBIDSp17AOo"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim3.html">Thần Dược</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 6 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie3.html">
+                                    <img src="~/Content/pictures/Sap Chieu/THIEN-DUONG-QUA-BAO.jpg" alt="Thiên Đường Quả Báo">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=dQscfm4U0MA"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim3.html">Thiên Đường Quả Báo</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 7 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie3.html">
+                                    <img src="~/Content/pictures/Sap Chieu/VAY-HAM-TAI-DAI-BAC.jpg" alt="Vây Hãm Tại Đài Bắc">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=AfybuJ8zOAI"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim3.html">Vây Hãm Tại Đài Bắc</a></h4>
+                        </div>
+                    </div>
+                    <!-- Phim 8 -->
+                    <div class="singer-movie-item">
+                        <div class="singer-movie-item-inner">
+                            <div class="singer-movie-item-poster">
+                                <a href="/film/movie3.html">
+                                    <img src="~/Content/pictures/Sap Chieu/VO-SI-GIAC-DAU-2.jpg" alt="Võ Sĩ Giác Đấu 2">
+                                </a>
+                            </div>
+                            <div class="thumb-hover">
+                                <a class="play-video" href="https://www.youtube.com/watch?v=R4AFSgUGEEs"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="top-movie-details">
+                            <h4><a href="phim3.html">Võ Sĩ Giác Đấu 2</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Khuyến Mãi và Sự Kiện-->
+        <div class="row">
+            <div class="movies-container">
+                <div class="movies-banner-heading">
+                    <h2 style="color:white">Phim:<span style="color: #c06c84"> Khuyến Mãi và Sự Kiện</span></h2>
+                </div>
+            </div>
+            <div class="movies-banner-carousel-2">
+                <div class="movies-banner-list">
+                    <!-- Phim 1 -->
+                    <div class="movies-banner">
+                        <a href="/film/movie1.html">
+                            <img src="~/Content/pictures/Banner/1.jpg" alt="Bảng Giá Vé Gold Class">
+                        </a>
+                    </div>
+
+                    <!-- Phim 2 -->
+                    <div class="movies-banner">
+                        <a href="/film/movie1.html">
+                            <img src="~/Content/pictures/Banner/2.jpg" alt="Bảng Giá Vé Gold Class">
+                        </a>
+                    </div>
+
+                    <!-- Phim 3 -->
+                    <div class="movies-banner">
+                        <a href="/film/movie1.html">
+                            <img src="~/Content/pictures/Banner/3.jpg" alt="Bảng Giá Vé Gold Class">
+                        </a>
+                    </div>
+
+                    <!-- Phim 4 -->
+                    <div class="movies-banner">
+                        <a href="/film/movie1.html">
+                            <img src="~/Content/pictures/Banner/4.png" alt="Bảng Giá Vé Gold Class">
+                        </a>
+                    </div>
+
+                    <!-- Phim 5 -->
+                    <div class="movies-banner">
+                        <a href="/film/movie1.html">
+                            <img src="~/Content/pictures/Banner/5.jpg" alt="Bảng Giá Vé Gold Class">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <!--Sắp Chiếu-->
-    <section class="singer-top-movies-area">
-        <div class="container">
-            <div class="singer-movie-heading">
-                <h2>Phim:<span style="color: #c06c84"> Sắp chiếu</span></h2>
-            </div>
-        </div>
-        <div class="singer-movie-carousel-2">
-            <div class="singer-movie-list">
-                <!-- Phim 1 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie1.html">
-                                <img src="~/Content/pictures/Sap Chieu/CONG-TU-BAC-LIEU.jpg" alt="Công Tử Bạc Liêu">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=q-wr0JDcvVk"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="cong-tu-bac-lieu.html">Công Tử Bạc Liêu</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 2 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie2.html">
-                                <img src="~/Content/pictures/Sap Chieu/DUNG-BUONG-TAY.jpg" alt="Đừng Buông Tay">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=LBKaAFV3TvU"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim2.html">Đừng Buông Tay</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 3 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie3.html">
-                                <img src="~/Content/pictures/Sap Chieu/LINH-MIU.jpg" alt="Linh Miêu">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=OVa8cZZQXfM"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim3.html">Linh Miêu</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 4 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie3.html">
-                                <img src="~/Content/pictures/Sap Chieu/MAT-MA-DO.jpg" alt="Mật Mã Đỏ">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=HKblerMyqvk"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim3.html">Mật Mã Đỏ</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 5 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie3.html">
-                                <img src="~/Content/pictures/Sap Chieu/THAN-DUOC.jpg" alt="Thần Dược">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=zBIDSp17AOo"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim3.html">Thần Dược</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 6 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie3.html">
-                                <img src="~/Content/pictures/Sap Chieu/THIEN-DUONG-QUA-BAO.jpg" alt="Thiên Đường Quả Báo">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=dQscfm4U0MA"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim3.html">Thiên Đường Quả Báo</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 7 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie3.html">
-                                <img src="~/Content/pictures/Sap Chieu/VAY-HAM-TAI-DAI-BAC.jpg" alt="Vây Hãm Tại Đài Bắc">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=AfybuJ8zOAI"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim3.html">Vây Hãm Tại Đài Bắc</a></h4>
-                    </div>
-                </div>
-                <!-- Phim 8 -->
-                <div class="singer-movie-item">
-                    <div class="singer-movie-item-inner">
-                        <div class="singer-movie-item-poster">
-                            <a href="/film/movie3.html">
-                                <img src="~/Content/pictures/Sap Chieu/VO-SI-GIAC-DAU-2.jpg" alt="Võ Sĩ Giác Đấu 2">
-                            </a>
-                        </div>
-                        <div class="thumb-hover">
-                            <a class="play-video" href="https://www.youtube.com/watch?v=R4AFSgUGEEs"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="top-movie-details">
-                        <h4><a href="phim3.html">Võ Sĩ Giác Đấu 2</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Khuyến Mãi và Sự Kiện-->
-    <div class="container">
-        <div class="movies-banner-heading">
-            <h2>Phim:<span style="color: #c06c84"> Khuyến Mãi và Sự Kiện</span></h2>
-        </div>
-    </div>
-    <div class="movies-banner-carousel-2">
-        <div class="movies-banner-list">
-            <!-- Phim 1 -->
-            <div class="movies-banner">
-                <a href="/film/movie1.html">
-                    <img src="~/Content/pictures/Banner/1.jpg" alt="Bảng Giá Vé Gold Class">
-                </a>
-            </div>
-
-            <!-- Phim 2 -->
-            <div class="movies-banner">
-                <a href="/film/movie1.html">
-                    <img src="~/Content/pictures/Banner/2.jpg" alt="Bảng Giá Vé Gold Class">
-                </a>
-            </div>
-
-            <!-- Phim 3 -->
-            <div class="movies-banner">
-                <a href="/film/movie1.html">
-                    <img src="~/Content/pictures/Banner/3.jpg" alt="Bảng Giá Vé Gold Class">
-                </a>
-            </div>
-
-            <!-- Phim 4 -->
-            <div class="movies-banner">
-                <a href="/film/movie1.html">
-                    <img src="~/Content/pictures/Banner/4.png" alt="Bảng Giá Vé Gold Class">
-                </a>
-            </div>
-
-            <!-- Phim 5 -->
-            <div class="movies-banner">
-                <a href="/film/movie1.html">
-                    <img src="~/Content/pictures/Banner/5.jpg" alt="Bảng Giá Vé Gold Class">
-                </a>
-            </div>
-        </div>
-    </div>
     <!--Phim tháng 10-->
     <section class="hot-movies">
-        <main>
+        <div class="container">
             <div class="hot-movies-heading">
                 <h2>Phim Hot:<span style="color: #c06c84"> Tháng 10</span></h2>
             </div>
-            <div class="hot-movies-list">
-                <div class="hot-movie">
-                    <img src="~/Content/pictures/venom3.jpg" />
-                    <div class="movie-info">
-                        <div class="hot-movies-title">
-                            <a href="/film/movie1.html">
-                                <h2>Venom: Kèo Cuối (T13)</h2>
-                            </a>
+        </div>
+        <div class="hot-movies-list">
+            <div class="hot-movie">
+                <img src="~/Content/pictures/venom3.jpg" />
+                <div class="movie-info">
+                    <div class="hot-movies-title">
+                        <a href="/film/movie1.html">
+                            <h2>Venom 2: Kèo Cuối</h2>
+                        </a>
 
-                        </div>
-                        <p style="color: #c06c84">  Siêu anh hùng</p>
-                        <div class="hot-movies-item-meta">
-                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
-                            <span class="hot-movies-field-duration" style="color: black">T13</span>
-                        </div>
-                        <p><strong>Đạo diễn:</strong> Kelly Marcel</p>
-                        <p><strong>Diễn viên:</strong> Tom Hardy, Juno Temple ,Chiwetel Ejiofor, Clark Backo, Stephen Graham</p>
-                        <p class="description">
-                            <b>Chi tiết: </b> Tom Hardy sẽ tái xuất trong bom tấn Venom: The Last Dance (Tựa Việt: Venom: Kèo Cuối)
-                            và phải đối mặt với kẻ thù lớn nhất từ trước đến nay - toàn bộ cơ...
-                        </p>
-                        <div class="hot-movies-item-button">
-                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
                     </div>
-                </div>
-                <hr />
-                <div class="hot-movie">
-                    <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" />
-                    <div class="movie-info">
-                        <div class="hot-movies-title">
-                            <a href="/film/movie1.html">
-                                <h2>Ác Quỷ Truy Hồn</h2>
-                            </a>
-
-                        </div>
-                        <p style="color: #c06c84"> Kinh dị</p>
-                        <div class="hot-movies-item-meta">
-                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
-                            <span class="hot-movies-field-duration" style="color: black">T13</span>
-                        </div>
-                        <p><strong>Đạo diễn:</strong>  Sidharta Tara</p>
-                        <p><strong>Diễn viên:</strong> Indah Permatasari, Claresta Taufan Kusumarina, José Rizal Manua,...</p>
-                        <p class="description">
-                            <b>Chi tiết: </b>  Sau một tai nạn, cô gái trẻ Retno mất mẹ, trong khi cha cô rơi vào tình trạng hôn mê. Cô cùng chị gái mình quyết định đưa cha về chăm sóc,
-                            nhưng quãng thời gian này trở thành địa ngục với cả gia đình khi những sự kiện ghê rợn liên tiếp xảy ra. Cùng l...
-                        </p>
-                        <div class="hot-movies-item-button">
-                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
+                    <p style="color: #c06c84"> Siêu anh hùng</p>
+                    <div class="hot-movies-item-meta">
+                        <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                        <span class="hot-movies-field-duration" style="color: black">T13</span>
                     </div>
-                </div>
-                <hr />
-                <div class="hot-movie">
-                    <img src="~/Content/pictures/co-dau-hao-mon.jpg" />
-                    <div class="movie-info">
-                        <div class="hot-movies-title">
-                            <a href="/film/movie1.html">
-                                <h2>Cô Dâu Hào Môn</h2>
-                            </a>
-
-                        </div>
-                        <p style="color: #c06c84"> Tâm Lý, Tình Cảm</p>
-                        <div class="hot-movies-item-meta">
-                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
-                            <span class="hot-movies-field-duration" style="color: black">T13</span>
-                        </div>
-                        <p><strong>Đạo diễn:</strong>   Vũ Ngọc Đãng</p>
-                        <p><strong>Diễn viên:</strong> Uyển Ân, Samuel An, Thu Trang, Lê Giang, Kiều Minh Tuấn, NSND Hồng Vân,...</p>
-                        <p class="description">
-                            <b>Chi tiết: </b> Phim lấy đề tài làm dâu hào môn và khai thác câu chuyện môn đăng hộ đối, lối sống và quy
-                            tắc của giới thượng lưu dưới góc nhìn hài hước và châm biếm.
-                        </p>
-                        <div class="hot-movies-item-button">
-                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="hot-movie">
-                    <img src="~/Content/pictures/tin-hieu-cau-cuu.jpg" />
-                    <div class="movie-info">
-                        <div class="hot-movies-title">
-                            <a href="/film/movie1.html">
-                                <h2>Tín Hiệu Cầu Cứu</h2>
-                            </a>
-
-                        </div>
-                        <p style="color: #c06c84"> Bí Ẩn, Kinh Dị</p>
-                        <div class="hot-movies-item-meta">
-                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
-                            <span class="hot-movies-field-duration" style="color: black">T13</span>
-                        </div>
-                        <p><strong>Đạo diễn:</strong>  Zoë Kravitz</p>
-                        <p><strong>Diễn viên:</strong> Naomi Ackie, Channing Tatum,...</p>
-                        <p class="description">
-                            <b>Chi tiết: </b> "Tín Hiệu Cầu Cứu" theo chân cô phục vụ cocktail Frida (do Naomi Ackie thủ vai)
-                            đã phải lòng tỷ phú công nghệ tên Slater King (Channing Tatum thủ vai) và theo chân anh ta tới một
-                            hòn đảo thiên đường, với rất nhiều thú vui xa xỉ. Đời không như là mơ b...
-                        </p>
-                        <div class="hot-movies-item-button">
-                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="hot-movie">
-                    <img src="~/Content/pictures/tee-yod-2.jpg" />
-                    <div class="movie-info">
-                        <div class="hot-movies-title">
-                            <a href="/film/movie1.html">
-                                <h2>Tee Yod: Quỷ Ăn Tạng 2</h2>
-                            </a>
-
-                        </div>
-                        <p style="color: #c06c84"> Kinh Dị</p>
-                        <div class="hot-movies-item-meta">
-                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
-                            <span class="hot-movies-field-duration" style="color: black">T13</span>
-                        </div>
-                        <p><strong>Đạo diễn:</strong>  Taweewat Wantha</p>
-                        <p>
-                            <strong>Diễn viên:</strong> Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee,
-                            Friend Peerakrit Phacharaboonyakiat, Nutthatcha Jessica Padovan
-                        </p>
-                        <p class="description">
-                            <b>Chi tiết: </b>Ba năm sau cái chết của Yam, Yak vẫn tiếp tục săn lùng linh hồn bí ẩn mặc áo choàng đen. Gặp một cô gái
-                            có triệu chứng giống Yam, Yak phát hiện ra người bảo vệ linh hồn, pháp sư ẩn dật Puang, sống trong một khu rừng đầy nguy hiểm.
-                            Giữa những phép thu...
-                        </p>
-                        <div class="hot-movies-item-button">
-                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="hot-movie">
-                    <img src="~/Content/pictures/robot-hoang-da.jpg" />
-                    <div class="movie-info">
-                        <div class="hot-movies-title">
-                            <a href="/film/movie1.html">
-                                <h2>Robot Hoang Dã</h2>
-                            </a>
-
-                        </div>
-                        <p style="color: #c06c84"> Hoạt Hình, Phiêu Lưu</p>
-                        <div class="hot-movies-item-meta">
-                            <span class="hot-movies-field-mpaa" style="color: black">2D</span>
-                            <span class="hot-movies-field-duration" style="color: black">P</span>
-                        </div>
-                        <p><strong>Đạo diễn:</strong>  Chris Sanders</p>
-                        <p>
-                            <strong>Diễn viên:</strong> Lupita Nyong'o, Pedro Pascal, Catherine O’hara, Bill Nighy,...
-                        </p>
-                        <p class="description">
-                            <b>Chi tiết: </b> Cuộc phiêu lưu hoành tráng theo chân hành trình của một robot — đơn vị ROZZUM 7134, gọi tắt là Roz.
-                            Roz vô tình dạt vào hoang đảo sau một sự cố và nơi đây trở thành địa điểm sống mới của cô. Tại đây, Roz kết thân và nhận
-                            nuôi một chú ngỗng con, đặt t...
-                        </p>
-                        <div class="hot-movies-item-button">
-                            <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
-                                <i class="fa fa-ticket"></i> Đặt vé
-                            </a>
-                        </div>
+                    <p><strong>Đạo diễn:</strong>  Kelly Marcel</p>
+                    <p><strong>Diễn viên:</strong> Tom Hardy, Juno Temple, Chiwetel Ejiofor, Clark Backo, Stephen Graham</p>
+                    <p class="description">
+                        <b>Chi tiết: </b>  Tom Hardy sẽ tái xuất trong bom tấn Venom: The Last Dance (Tựa Việt: Venom: Kèo Cuối)
+                        và phải đối mặt với kẻ thù lớn nhất từ trước đến nay - toàn bộ chủng tộc Symbiote Venom: Kèo cuối - Dự kiến khởi chiếu 25.10.2024
+                    </p>
+                    <div class="hot-movies-item-button">
+                        <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                            <i class="fa fa-ticket"></i> Đặt vé
+                        </a>
                     </div>
                 </div>
             </div>
-        </main>
+            <div class="hot-movie">
+                <img src="~/Content/pictures/AC-QUY-TRUY-HON.jpg" />
+                <div class="movie-info">
+                    <div class="hot-movies-title">
+                        <a href="/film/movie1.html">
+                            <h2>Ác Quỷ Truy Hồn</h2>
+                        </a>
+
+                    </div>
+                    <p style="color: #c06c84"> Kinh dị</p>
+                    <div class="hot-movies-item-meta">
+                        <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                        <span class="hot-movies-field-duration" style="color: black">T18</span>
+                    </div>
+                    <p><strong>Đạo diễn:</strong>  Sidharta Tara</p>
+                    <p><strong>Diễn viên:</strong> Indah Permatasari, Claresta Taufan Kusumarina, José Rizal Manua,...</p>
+                    <p class="description">
+                        <b>Chi tiết: </b>  Sau một tai nạn, cô gái trẻ Retno mất mẹ, trong khi cha cô rơi vào tình trạng hôn mê. Cô cùng chị gái mình quyết định đưa cha về chăm sóc,
+                        nhưng quãng thời gian này trở thành địa ngục với cả gia đình khi những sự kiện ghê rợn liên tiếp xảy ra. Cùng l...
+                    </p>
+                    <div class="hot-movies-item-button">
+                        <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                            <i class="fa fa-ticket"></i> Đặt vé
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-movie">
+                <img src="~/Content/pictures/co-dau-hao-mon.jpg" />
+                <div class="movie-info">
+                    <div class="hot-movies-title">
+                        <a href="/film/movie1.html">
+                            <h2>Cô Dâu Hào Môn</h2>
+                        </a>
+
+                    </div>
+                    <p style="color: #c06c84">Tâm Lý, Tình Cảm</p>
+                    <div class="hot-movies-item-meta">
+                        <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                        <span class="hot-movies-field-duration" style="color: black">T13</span>
+                    </div>
+                    <p><strong>Đạo diễn:</strong>    Vũ Ngọc Đãng</p>
+                    <p><strong>Diễn viên:</strong> Uyển Ân, Samuel An, Kiều Minh Tuấn, Thu Trang, Lê Giang, NSND Hồng Vân</p>
+                    <p class="description">
+                        <b>Chi tiết: </b> Uyển Ân chính thức lên xe hoa trong thế giới thượng lưu của đạo diễn Vũ Ngọc Đãng qua bộ phim Cô Dâu Hào Môn. Bộ phim xoay quanh câu chuyện làm dâu
+                        nhà hào môn dưới góc nhìn hài hước và châm biếm, hé lộ những câu chuyện kén dâu chọn rể trong giới thượng lưu.
+
+                    </p>
+                    <div class="hot-movies-item-button">
+                        <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                            <i class="fa fa-ticket"></i> Đặt vé
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-movie">
+                <img src="~/Content/pictures/tin-hieu-cau-cuu.jpg" />
+                <div class="movie-info">
+                    <div class="hot-movies-title">
+                        <a href="/film/movie1.html">
+                            <h2>Tín Hiệu Cầu Cứu</h2>
+                        </a>
+
+                    </div>
+                    <p style="color: #c06c84"> Bí Ẩn, Kinh Dị</p>
+                    <div class="hot-movies-item-meta">
+                        <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                        <span class="hot-movies-field-duration" style="color: black">T18</span>
+                    </div>
+                    <p><strong>Đạo diễn:</strong>  Zoë Kravitz</p>
+                    <p><strong>Diễn viên:</strong> Naomi Ackie, Channing Tatum,...</p>
+                    <p class="description">
+                        <b>Chi tiết: </b> "Tín Hiệu Cầu Cứu" theo chân cô phục vụ cocktail Frida (do Naomi Ackie thủ vai)
+                        đã phải lòng tỷ phú công nghệ tên Slater King (Channing Tatum thủ vai) và theo chân anh ta tới một
+                        hòn đảo thiên đường, với rất nhiều thú vui xa xỉ. Đời không như là mơ b...
+                    </p>
+                    <div class="hot-movies-item-button">
+                        <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                            <i class="fa fa-ticket"></i> Đặt vé
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-movie">
+                <img src="~/Content/pictures/tee-yod-2.jpg" />
+                <div class="movie-info">
+                    <div class="hot-movies-title">
+                        <a href="/film/movie1.html">
+                            <h2>Tee Yod: Quỷ Ăn Tạng 2</h2>
+                        </a>
+
+                    </div>
+                    <p style="color: #c06c84"> Kinh Dị</p>
+                    <div class="hot-movies-item-meta">
+                        <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                        <span class="hot-movies-field-duration" style="color: black">T18</span>
+                    </div>
+                    <p><strong>Đạo diễn:</strong>  Taweewat Wantha</p>
+                    <p>
+                        <strong>Diễn viên:</strong> Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee,
+                        Friend Peerakrit Phacharaboonyakiat, Nutthatcha Jessica Padovan
+                    </p>
+                    <p class="description">
+                        <b>Chi tiết: </b>Ba năm sau cái chết của Yam, Yak vẫn tiếp tục săn lùng linh hồn bí ẩn mặc áo choàng đen. Gặp một cô gái
+                        có triệu chứng giống Yam, Yak phát hiện ra người bảo vệ linh hồn, pháp sư ẩn dật Puang, sống trong một khu rừng đầy nguy hiểm.
+                        Giữa những phép thu...
+                    </p>
+                    <div class="hot-movies-item-button">
+                        <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                            <i class="fa fa-ticket"></i> Đặt vé
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-movie">
+                <img src="~/Content/pictures/robot-hoang-da.jpg" />
+                <div class="movie-info">
+                    <div class="hot-movies-title">
+                        <a href="/film/movie1.html">
+                            <h2>Robot Hoang Dã</h2>
+                        </a>
+
+                    </div>
+                    <p style="color: #c06c84"> Hoạt Hình, Phiêu Lưu</p>
+                    <div class="hot-movies-item-meta">
+                        <span class="hot-movies-field-mpaa" style="color: black">2D</span>
+                        <span class="hot-movies-field-duration" style="color: black">P</span>
+                    </div>
+                    <p><strong>Đạo diễn:</strong>  Chris Sanders</p>
+                    <p>
+                        <strong>Diễn viên:</strong> Lupita Nyong'o, Pedro Pascal, Catherine O’hara, Bill Nighy,...
+                    </p>
+                    <p class="description">
+                        <b>Chi tiết: </b> Cuộc phiêu lưu hoành tráng theo chân hành trình của một robot — đơn vị ROZZUM 7134, gọi tắt là Roz.
+                        Roz vô tình dạt vào hoang đảo sau một sự cố và nơi đây trở thành địa điểm sống mới của cô. Tại đây, Roz kết thân và nhận
+                        nuôi một chú ngỗng con, đặt t...
+                    </p>
+                    <div class="hot-movies-item-button">
+                        <a href="/film/movie1.html" class="movies-btn-icon-text link-detail movies-fancybox">
+                            <i class="fa fa-ticket"></i> Đặt vé
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Phần thông tin liên hệ -->
+            <div class="footer-info">
+                <img src="~/Content/pictures/footer_logo.png" />
+                <p>Support: <a href="mailto:support@starlight.vn">Support@Starlight.Vn</a></p>
+                <p>Hotline: <a href="tel:19001722">1900 1722</a></p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Phần chính sách -->
+            <div class="footer-policy">
+                <h4>CHÍNH SÁCH</h4>
+                <ul>
+                    <li><a href="#">Điều Khoản Chung</a></li>
+                    <li><a href="#">Chính Sách Thanh Toán</a></li>
+                    <li><a href="#">Chính Sách Giao Nhận</a></li>
+                    <li><a href="#">Bảo Mật Thông Tin</a></li>
+                    <li><a href="#">Kiểm Hàng, Đổi Trả/Hoàn Tiền</a></li>
+                </ul>
+            </div>
+
+            <!-- Phần Download app -->
+            <div class="footer-download">
+                <h4>DOWNLOAD APP</h4>
+                <p>Tải Ngay Ứng Dụng Đặt Vé Online Cho Dễ Yêu Của Bạn !</p>
+                <div class="app-icons">
+                    <a href="#"><img src="~/Content/pictures/app-1.jpg" alt="Google Play">
+                    </a>
+                    <a href="#"><img src="~/Content/pictures/app-2.jpg" alt="App Store"></a>
+                </div>
+                <img src="~/Content/pictures/congthuong.jpg" alt="Bộ Công Thương" class="gov-badge">
+            </div>
+        </div>
+
+        <!-- Phần thông tin công ty -->
+        <div class="footer-company-info">
+            <p><strong>CÔNG TY CỔ PHẦN ENTERTAINMENT 2020</strong></p>
+            <p>Giấy chứng nhận đăng ký doanh nghiệp công ty cổ phần: 0402021264 đăng ký lần đầu ngày 03/01/2020</p>
+            <p>Cơ quan cấp: Phòng Đăng ký kinh doanh - Sở kế hoạch và đầu tư Thành phố Đà Nẵng</p>
+            <p>Địa chỉ: Tầng 4, Tòa nhà Nguyễn Kim, 46 Điện Biên Phủ, TP. Đà Nẵng, Việt Nam</p>
+            <p>Hotline (Đường dây nóng): <a href="tel:19001722">1900 1722</a></p>
+            <p>
+                "2019 © StarLight. All rights reserved - Design by"
+                <a href="https://kingpro.vn">KingPro</a>
+            </p>
+        </div>
+    </footer>
     <script src="~/Scripts/main.js"></script>
     <script src="~/Scripts/Booking.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('.amy-movie-list').slick({
-                infinite: true,
-                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                autoplay: true,  // Thêm tính năng tự động chạy
-                autoplaySpeed: 3000  // Chạy sau mỗi 3 giây
-            });
-        });
-
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $('.singer-movie-list').slick({
-                infinite: true,
-                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                autoplay: true,  // Tự động chạy
-                autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.movies-banner-list').slick({
-                infinite: true,
-                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                autoplay: true,  // Tự động chạy
-                autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.movies-banner-list').slick({
-                infinite: true,
-                slidesToShow: 3, // Hiển thị 3 mục phim cùng lúc
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                autoplay: true,  // Tự động chạy
-                autoplaySpeed: 3000,  // Chạy sau mỗi 3 giây
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
+    <script src="~/Scripts/Movies.js"></script>
     <div>
         @RenderBody() <!-- Phần nội dung sẽ được render tại đây -->
     </div>

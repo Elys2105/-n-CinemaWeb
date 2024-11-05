@@ -119,6 +119,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\FilmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bgs5.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -149,14 +151,22 @@
     <Content Include="Content\pictures\Banner\3.jpg" />
     <Content Include="Content\pictures\Banner\4.png" />
     <Content Include="Content\pictures\Banner\5.jpg" />
+    <Content Include="Content\pictures\bgs2.jpg" />
+    <Content Include="Content\pictures\bgs4.jpg" />
+    <Content Include="Content\pictures\bgs5.jpg" />
+    <Content Include="Content\pictures\bgs6.jpg" />
     <Content Include="Content\pictures\co-dau-hao-mon-ngang.jpg" />
+    <Content Include="Content\pictures\footer_logo.png" />
     <Content Include="Content\pictures\Lich Chieu\Bao Loc.jpg" />
     <Content Include="Content\pictures\Lich Chieu\Buon ma thuoc.jpg" />
     <Content Include="Content\pictures\Lich Chieu\Gia Lai.jpg" />
     <Content Include="Content\pictures\Lich Chieu\Long An.jpg" />
     <Content Include="Content\pictures\Lich Chieu\Quang Ninh.jpg" />
     <Content Include="Content\pictures\Lich Chieu\Đà Nẵng.jpg" />
+    <Content Include="Content\pictures\app-1.jpg" />
+    <Content Include="Content\pictures\app-2.jpg" />
     <Content Include="Content\pictures\Sap Chieu\CONG-TU-BAC-LIEU.jpg" />
+    <Content Include="Content\pictures\congthuong.jpg" />
     <Content Include="Content\pictures\Sap Chieu\DUNG-BUONG-TAY.jpg" />
     <Content Include="Content\pictures\Sap Chieu\LINH-MIU.jpg" />
     <Content Include="Content\pictures\Sap Chieu\MAT-MA-DO.jpg" />
@@ -212,6 +222,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Movies.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -233,12 +244,12 @@
     <Content Include="Views\User\Resgiter.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
     <Content Include="Views\User\KhuyenMai.cshtml" />
-    <Content Include="Views\Movies\LichChieu.cshtml" />
     <Content Include="Views\Movies\LongAn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Film\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
