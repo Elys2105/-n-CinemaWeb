@@ -157,7 +157,6 @@
         width: 100%;
         display: block;
         margin: auto;
-        border: 3px solid #f37737;
         max-width:1300px;
     }
 
@@ -177,17 +176,22 @@
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
+        width:100%;
+        max-width:1300px;
+        margin:auto;
+        background-color:#dcdcdc;
     }
 
     .date-item {
         flex: 1;
         padding: 10px;
-        background-color: #f4f4f4;
+        background-color:white;
         border: 1px solid #ddd;
         margin: 5px;
         font-size: 14px;
         color: #333;
         text-align: center;
+        border-color:black;
     }
 
         .date-item.active {
@@ -200,54 +204,12 @@
             color: #fff;
             cursor: pointer;
         }
-    /* Header: Thanh điều hướng */
-    header {
-        background-color: #333;
-        padding: 1rem 0;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        margin: auto;
-    }
-
-    .logo a {
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    .nav-links {
-        list-style: none;
-    }
-
-        .nav-links li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-            .nav-links li a {
-                color: #fff;
-                text-decoration: none;
-                font-size: 1rem;
-            }
-
-    .user-actions a {
-        color: #fff;
-        margin-left: 20px;
-        text-decoration: none;
-        background-color: #ff6600;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-    }
-
-
     main {
         padding: 2rem 0;
+        width:100%;
+        max-width:1300px;
+        margin:auto;
+        background-color: #dcdcdc;
     }
 
     .movies-list {
@@ -299,12 +261,128 @@
             }
 
     /* Footer */
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1rem 0;
+    .footer-section {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        padding: 40px 20px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
     }
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    /* Phần thông tin liên hệ */
+    .footer-info {
+        width: 30%;
+    }
+
+    .footer-logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .footer-info p {
+        margin: 10px 0;
+    }
+
+    .footer-info a {
+        color: #f37021;
+        text-decoration: none;
+    }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+    /* Biểu tượng mạng xã hội */
+    .social-icons a {
+        color: #ffffff;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+        .social-icons a:hover {
+            color: #f37021;
+        }
+
+    /* Phần chính sách */
+    .footer-policy {
+        width: 30%;
+    }
+
+        .footer-policy h4 {
+            color: #f37021;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-policy ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .footer-policy ul li {
+                margin-bottom: 10px;
+            }
+
+                .footer-policy ul li a {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+
+                    .footer-policy ul li a:hover {
+                        text-decoration: underline;
+                    }
+
+    /* Phần download app */
+    .footer-download {
+        width: 30%;
+    }
+
+        .footer-download h4 {
+            color: #f37021;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+    .app-icons img {
+        max-width: 120px;
+        margin-right: 10px;
+    }
+
+    .gov-badge {
+        max-width: 150px;
+        margin-top: 10px;
+    }
+
+    /* Phần thông tin công ty */
+    .footer-company-info {
+        text-align: left;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        padding-top: 20px;
+    }
+
+        .footer-company-info p {
+            margin: 5px 0;
+        }
+
+        .footer-company-info a {
+            color: #f37021;
+        }
+
+    .black-wrapper {
+        background-color: dimgray; /* Màu nền đen */
+        padding: 30px; /* Khoảng cách xung quanh nội dung */
+    }
+
 </style>
 <!DOCTYPE html>
 
@@ -351,7 +429,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="~/Home/Home">Trang Chủ</a></li>
-                    <li><a href="~/Movies/LichChieu">Lịch Chiếu</a></li>
+                    <li><a href="~/Movies/LongAn">Lịch Chiếu</a></li>
                     <li><a href="#">Phim</a></li>
                     <li><a href="~/User/KhuyenMai">Khuyến Mãi</a></li>
                     <li><a href="#">Điện Ảnh</a></li>
@@ -377,10 +455,10 @@
     </div>
 
     <main>
-        <section>
+        <section class="film">
             <!-- Phim 1: Venom -->
             <div class="movie">
-                <img src="~/Content/pictures/Trang Chu/venom3.jpg" />
+                <img src="~/Content/pictures/venom3.jpg" />
                 <div class="movie-info">
                     <h2>Venom: Kẻo Cuối (T13)</h2>
                     <p><strong>Đạo diễn:</strong> Kelly Marcel</p>
@@ -462,9 +540,60 @@
             </div>
         </section>
     </main>
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Starlight Entertainment Center</p>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Phần thông tin liên hệ -->
+            <div class="footer-info">
+                <img src="~/Content/pictures/footer_logo.png" />
+                <p>Support: <a href="mailto:support@starlight.vn">Support@Starlight.Vn</a></p>
+                <p>Hotline: <a href="tel:19001722">1900 1722</a></p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Phần chính sách -->
+            <div class="footer-policy">
+                <h4>CHÍNH SÁCH</h4>
+                <ul>
+                    <li><a href="#">Điều Khoản Chung</a></li>
+                    <li><a href="#">Chính Sách Thanh Toán</a></li>
+                    <li><a href="#">Chính Sách Giao Nhận</a></li>
+                    <li><a href="#">Bảo Mật Thông Tin</a></li>
+                    <li><a href="#">Kiểm Hàng, Đổi Trả/Hoàn Tiền</a></li>
+                </ul>
+            </div>
+
+            <!-- Phần Download app -->
+            <div class="footer-download">
+                <h4>DOWNLOAD APP</h4>
+                <p>Tải Ngay Ứng Dụng Đặt Vé Online Cho Dễ Yêu Của Bạn !</p>
+                <div class="app-icons">
+                    <a href="#">
+                        <img src="~/Content/pictures/app-1.jpg" alt="Google Play">
+                    </a>
+                    <a href="#"><img src="~/Content/pictures/app-2.jpg" alt="App Store"></a>
+                </div>
+                <img src="~/Content/pictures/congthuong.jpg" alt="Bộ Công Thương" class="gov-badge">
+            </div>
+        </div>
+
+        <!-- Phần thông tin công ty -->
+        <div class="footer-company-info">
+            <p><strong>CÔNG TY CỔ PHẦN ENTERTAINMENT 2020</strong></p>
+            <p>Giấy chứng nhận đăng ký doanh nghiệp công ty cổ phần: 0402021264 đăng ký lần đầu ngày 03/01/2020</p>
+            <p>Cơ quan cấp: Phòng Đăng ký kinh doanh - Sở kế hoạch và đầu tư Thành phố Đà Nẵng</p>
+            <p>Địa chỉ: Tầng 4, Tòa nhà Nguyễn Kim, 46 Điện Biên Phủ, TP. Đà Nẵng, Việt Nam</p>
+            <p>Hotline (Đường dây nóng): <a href="tel:19001722">1900 1722</a></p>
+            <p>
+                "2019 © StarLight. All rights reserved - Design by"
+                <a href="https://kingpro.vn">KingPro</a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
