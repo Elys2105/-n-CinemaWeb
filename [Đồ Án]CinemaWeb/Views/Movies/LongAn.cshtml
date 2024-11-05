@@ -139,6 +139,35 @@
                     background-color: #c06c84; /* Màu nền khi hover */
                     color: white; /* Màu chữ khi hover */
                 }
+            .main-nav ul li .dropdown-menu {
+                display: none;
+                position: absolute;
+                background-color: #ffffff;
+                padding: 0;
+                list-style-type: none;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                z-index: 10; /* Ensure dropdown appears on top */
+            }
+
+            /* Show the dropdown when hovering over the parent li */
+            .main-nav ul li:hover .dropdown-menu {
+                display: block;
+            }
+
+    /* Style the dropdown links */
+    .dropdown-menu li {
+        padding: 8px 16px;
+    }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+        }
+
+            .dropdown-menu li a:hover {
+                background-color: #f0f0f0;
+            }
     .schedule-container {
         width: 100%;
         max-width: 800px;
@@ -262,7 +291,7 @@
 
     /* Footer */
     .footer-section {
-        background-color: #1c1c1c;
+        background-image: url('../../content/pictures/bgs2.jpg');
         color: #ffffff;
         padding: 40px 20px;
         font-size: 14px;
@@ -430,11 +459,15 @@
                 <ul>
                     <li><a href="~/Home/Home">Trang Chủ</a></li>
                     <li><a href="~/Movies/LongAn">Lịch Chiếu</a></li>
-                    <li><a href="#">Phim</a></li>
+                    <li>
+                        <a href="#">Phim</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Movies/NowShowing">Phim Đang Chiếu</a></li>
+                            <li><a href="~/Movies/ComingSoon">Phim Sắp Chiếu</a></li>
+                        </ul>
+                    </li>
                     <li><a href="~/User/KhuyenMai">Khuyến Mãi</a></li>
-                    <li><a href="#">Điện Ảnh</a></li>
                     <li><a href="#">Liên Hệ</a></li>
-                    <li><a href="#">Tuyển Dụng</a></li>
                 </ul>
             </nav>
         </div>

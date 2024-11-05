@@ -21,5 +21,9 @@ namespace _Đồ_Án_CinemaWeb.Controllers
         {
             return View();
         }
+        public ActionResult LienHe()
+        {
+            return View();
+        }
     }
 }
